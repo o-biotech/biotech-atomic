@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {},
+  "tasks": {
+    "test": "deno test ./tests/tests.ts"
+  },
+  "fmt": {
+    "files": {
+      "include": [],
+      "exclude": []
+    },
+    "options": {}
+  },
+  "lint": {
+    "files": {
+      "include": [],
+      "exclude": []
+    },
+    "rules": {
+      "include": [],
+      "exclude": []
+    }
+  }
+}
