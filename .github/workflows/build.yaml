@@ -39,7 +39,7 @@ jobs:
       - name: Tag commit
         if: ${{ fromJSON(steps.changed.outputs.result) }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
         run: |
           git tag ${{ steps.semver.outputs.version }} ${{ steps.commit.outputs.commit }}
           git push origin ${{ steps.semver.outputs.version }}
