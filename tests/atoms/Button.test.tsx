@@ -20,7 +20,7 @@ describe("Button Tests", () => {
 
     assertEquals(
       html,
-      `<button disabled class="px-2 py-1 border(green-100 2) hover:bg-blue-200">Hello</button>`,
+      `<button disabled class="px-2 py-1 border(gray-100 2) hover:bg-gray-200">Hello</button>`,
     );
   });
 });
