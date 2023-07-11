@@ -1,4 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
+import { Button } from "../atoms/Button.tsx";
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren;
@@ -15,10 +16,7 @@ export function Header(props: HeaderProps) {
           <a href="/" className="text-white font-bold text-xl">{props.logo}</a>
         </div>
         <div className="sm:hidden">
-          <button
-            type="button"
-            className="text-white hover:text-gray-500 focus:text-gray-500 focus:outline-none"
-          >
+          <Button type="button">
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
               <path
                 className="hidden"
@@ -27,7 +25,7 @@ export function Header(props: HeaderProps) {
                 d="M4 18h16v-2H4v2ZM4 13h16v-2H4v2ZM4 6v2h16V6H4Z"
               />
             </svg>
-          </button>
+          </Button>
         </div>
       </div>
       <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
