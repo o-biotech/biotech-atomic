@@ -1,7 +1,17 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.2.0/",
+    "preact": "https://esm.sh/preact@10.15.1",
+    "preact/": "https://esm.sh/preact@10.15.1/",
+    "jsdom": "https://esm.sh/jsdom@16.4.0",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.1.0"
+  },
   "tasks": {
-    "test": "deno test ./tests/tests.ts"
+    "test": "deno test -A ./tests/tests.ts"
   },
   "fmt": {
     "files": {

@@ -1,1 +1,1 @@
-import "./Button.test.ts";
+import "./Button.test.tsx";

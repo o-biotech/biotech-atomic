@@ -1,1 +1,1 @@
-export { Button } from './src/atoms/Button.ts';
+export { Button } from './src/atoms/Button.tsx';
