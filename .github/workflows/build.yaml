@@ -32,8 +32,7 @@ jobs:
         run: deno task build
 
       - name: Version format 
-        run: |
-          echo "Version format ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}"
+        run: echo "Version format ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}"
 
       - name: Version
         id: version
