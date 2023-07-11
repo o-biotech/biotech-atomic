@@ -43,11 +43,6 @@ jobs:
           user_format_type: "json"
           enable_prerelease_mode: true
 
-      - name: New Version
-        run: |
-          echo "New version is ${{ steps.version.outputs.version_tag }}"
-          echo "TOKEN ${{ secrets.GITHUB_TOKEN }}"
-
       - name: Tag commit ${{ steps.version.outputs.version_tag }}
         # if: ${{ fromJSON(steps.changed.outputs.result) }}
         # env:
