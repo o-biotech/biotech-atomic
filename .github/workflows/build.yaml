@@ -60,7 +60,7 @@ jobs:
           # namespace: ${{ steps.vars.outputs.currentBranch == env.MainBranch && null || steps.vars.outputs.currentBranch }}
           # search_commit_body: false
           user_format_type: "json"
-          enable_prerelease_mode: true
+          enable_prerelease_mode: ${{ steps.vars.outputs.currentBranch != env.MainBranch }}
 
       - name: Tag commit ${{ steps.version.outputs.version }}
         run: |
