@@ -1,6 +1,10 @@
-import { JSX } from "preact";
+import { ComponentChildren, JSX } from "preact";
 
-export function Header(props: JSX.HTMLAttributes<HTMLElement>) {
+export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
+  logo?: ComponentChildren;
+}
+
+export function Header(props: HeaderProps) {
   return (
     <header
       {...props}
@@ -8,7 +12,7 @@ export function Header(props: JSX.HTMLAttributes<HTMLElement>) {
     >
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          <a href="/" className="text-white font-bold text-xl">Logo</a>
+          <a href="/" className="text-white font-bold text-xl">{props.logo}</a>
         </div>
         <div className="sm:hidden">
           <button
