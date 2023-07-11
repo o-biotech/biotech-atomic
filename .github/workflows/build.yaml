@@ -7,7 +7,6 @@ on: push
 
 env:
   MainBranch: main
-  CurrentBranch: ${{ github.ref.replace('refs/heads/', '') }}
   MainFormat: "${major}.${minor}.${patch}"
   PrereleaseFormat: "${major}.${minor}.${patch}-prerelease${increment}"
   
@@ -25,6 +24,12 @@ jobs:
         with:
           fetch-depth: 0
         
+      - name: Set variables
+        id: vars
+        run: |
+          branch=${GITHUB_REF##*/}
+          echo ::set-output name=currentBranch::$branch
+
       - name: Deno Setup
         uses: denoland/setup-deno@v1.1.0
         with:
@@ -41,7 +46,7 @@ jobs:
           major_pattern: "(MAJOR)"
           minor_pattern: "(MINOR)"
           version_format: ${{ env.CurrentBranch == env.MainBranch && env.MainFormat || env.PrereleaseFormat }}
-          namespace: ${{ env.CurrentBranch == env.MainBranch && null || env.CurrentBranch }}
+          namespace: ${{ env.CurrentBranch == env.MainBranch && null || steps.vars.outputs.currentBranch }}
           bump_each_commit: false
           search_commit_body: false
           user_format_type: "json"
