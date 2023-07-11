@@ -42,10 +42,10 @@ jobs:
           echo "New version is ${{ steps.version.outputs.version }}"
           echo "TOKEN ${{ secrets.FATHYM_GITHUB_TOKEN }}"
 
-      # - name: Tag commit
-      #   # if: ${{ fromJSON(steps.changed.outputs.result) }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
-      #   run: |
-      #     git tag ${{ steps.semver.outputs.version }} ${{ steps.commit.outputs.commit }}
-      #     git push origin ${{ steps.semver.outputs.version }}
+      - name: Tag commit
+        # if: ${{ fromJSON(steps.changed.outputs.result) }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
+        run: |
+          git tag ${{ steps.version.outputs.version }} ${{ steps.commit.outputs.commit }}
+          git push origin ${{ steps.version.outputs.version }}
