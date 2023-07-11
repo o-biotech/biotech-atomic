@@ -9,6 +9,8 @@
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.1.0"
   },
   "tasks": {
+    "dev-config": "deno task dev-tailwind",
+    "dev-tailwind": "echo '{}' > tailwind.config.js",
     "test": "deno test -A ./tests/tests.ts"
   },
   "fmt": {

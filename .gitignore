@@ -3,3 +3,4 @@ cov/
 coverage/
 lcov/
 target/
+tailwind.config.js
