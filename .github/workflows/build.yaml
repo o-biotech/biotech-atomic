@@ -12,7 +12,7 @@ jobs:
       matrix:
         os:
           - ubuntu-22.04
-          
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -47,7 +47,6 @@ jobs:
         run: |
           echo "New version is ${{ steps.version.outputs.version_tag }}"
           echo "TOKEN ${{ secrets.GITHUB_TOKEN }}"
-          echo "Remote https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}"
 
       - name: Tag commit ${{ steps.version.outputs.version_tag }}
         # if: ${{ fromJSON(steps.changed.outputs.result) }}
@@ -55,5 +54,5 @@ jobs:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git tag ${{ steps.version.outputs.version_tag }} ${{ steps.commit.outputs.commit }}
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}.git ${{ steps.version.outputs.version_tag }}
+          git push origin ${{ steps.version.outputs.version_tag }}
           
