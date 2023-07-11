@@ -63,5 +63,5 @@ jobs:
       - name: Tag commit ${{ steps.version.outputs.version }}
         run: |
           git tag v${{ steps.version.outputs.version }} ${{ steps.commit.outputs.commit }}
-          git push origin ${{ steps.version.outputs.version }}
+          git push origin v${{ steps.version.outputs.version }}
           
