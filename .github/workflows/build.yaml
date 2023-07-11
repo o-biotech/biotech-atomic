@@ -47,9 +47,6 @@ jobs:
           enable_prerelease_mode: true
 
       - name: Tag commit ${{ steps.version.outputs.version_tag }}
-        # if: ${{ fromJSON(steps.changed.outputs.result) }}
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git tag ${{ steps.version.outputs.version_tag }} ${{ steps.commit.outputs.commit }}
           git push origin ${{ steps.version.outputs.version_tag }}
