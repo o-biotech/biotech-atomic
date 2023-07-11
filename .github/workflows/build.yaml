@@ -28,18 +28,18 @@ jobs:
         id: vars
         run: |
           echo "currentBranch=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+          
 
       - name: Set version format
         id: versionFormat
-        if: steps.vars.outputs.currentBranch == env.MainBranch
         run: |
-          echo "format='${{ env.MainFormat }}'" >> $GITHUB_OUTPUT\
+          if [ "${{ steps.vars.outputs.currentBranch }}" == "${{ env.MainBranch }}" ]
+          then
+            echo "format='${{ env.MainFormat }}'" >> $GITHUB_OUTPUT\
+          else
+            echo "format='${{ env.MainFormat }}-${{ steps.vars.outputs.currentBranch }}(increment)'" >> $GITHUB_OUTPUT\
+          fi
 
-      - name: Set version format
-        id: versionFormat
-        if: steps.vars.outputs.currentBranch != env.MainBranch
-        run: |
-          echo "format='${{ env.MainFormat }}-${{ steps.vars.outputs.currentBranch }}(increment)'" >> $GITHUB_OUTPUT\
 
       - name: Deno Setup
         uses: denoland/setup-deno@v1.1.0
