@@ -8,8 +8,6 @@ on: push
 env:
   MainBranch: main
   CurrentBranch: ${{ github.ref }}
-  IsMain: ${{ env.CurrentBranch == env.MainBranch }}
-  VersionFormat: ${{ env.IsMain && "${major}.${minor}.${patch}" && "${major}.${minor}.${patch}-prerelease${increment}" }}
   
 jobs:
   build:
@@ -35,8 +33,7 @@ jobs:
 
       - name: Version format 
         run: |
-          echo "Version format ${{ env.VersivonFormat }}""
-          echo "IsMain ${{ env.IsMain }}""
+          echo "Version format ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}"
 
       - name: Version
         id: version
@@ -45,7 +42,7 @@ jobs:
           tag_prefix: "v"
           major_pattern: "(MAJOR)"
           minor_pattern: "(MINOR)"
-          version_format: ${{ env.VersivonFormat }}
+          version_format: ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}
           namespace: ${{ env.CurrentBranch == env.MainBranch && "" || env.CurrentBranch }}
           bump_each_commit: false
           search_commit_body: false
