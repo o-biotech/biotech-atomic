@@ -18,6 +18,9 @@ describe("Button Tests", () => {
 
     console.log(html);
 
-    assertEquals(html, `<button disabled>Hello</button>`);
+    assertEquals(
+      html,
+      `<button disabled class="px-2 py-1 border(green-100 2) hover:bg-blue-200">Hello</button>`,
+    );
   });
 });
