@@ -8,21 +8,32 @@ jobs:
         os:
           - ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        uses: denoland/setup-deno@v1.1.0
+        with:
+          deno-version: v1.x.x
+
       - name: Install semver
         run: npm install --global semver
+
       - name: Get current commit
         run: echo "::set-output name=commit::$(git rev-parse HEAD)"
+
       - name: Get current version
         id: semver
         run: echo "::set-output name=version::$(semver -l | cut -c 2-)"
+
       - name: Deno fmt check
         run: deno fmt --check
+
       - name: Deno lint
         run: deno lint
+
       - name: Deno test
         run: |
           deno test -A --coverage=cov
+
       - name: Tag commit
         if: ${{ fromJSON(steps.changed.outputs.result) }}
         env:
