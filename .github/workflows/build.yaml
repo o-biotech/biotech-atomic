@@ -37,7 +37,7 @@ jobs:
           deno test -A --coverage=cov
 
       - name: Tag commit
-        if: ${{ fromJSON(steps.changed.outputs.result) }}
+        # if: ${{ fromJSON(steps.changed.outputs.result) }}
         env:
           GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
         run: |
