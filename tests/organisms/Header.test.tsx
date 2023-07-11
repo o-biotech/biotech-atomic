@@ -15,8 +15,6 @@ describe("Header Tests", () => {
   describe("Exists", () => {
     const html = render(<Header logo={<Button>Hello World</Button>} />);
 
-    console.log(html);
-
     assert(html.includes("Hello World"));
   });
 });
