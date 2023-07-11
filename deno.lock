@@ -1,19 +1,10 @@
 {
   "version": "2",
   "remote": {
-    "https://deno.land/std@0.193.0/fmt/colors.ts": "d67e3cd9f472535241a8e410d33423980bec45047e343577554d3356e1f0ef4e",
-    "https://deno.land/std@0.193.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
-    "https://deno.land/std@0.193.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
-    "https://deno.land/std@0.193.0/testing/_test_suite.ts": "30f018feeb3835f12ab198d8a518f9089b1bcb2e8c838a8b615ab10d5005465c",
-    "https://deno.land/std@0.193.0/testing/asserts.ts": "056d571baaefc7f13af3e29ad6a66d4dbe5355d3cb2ae130e7d2a1b1e01085e3",
-    "https://deno.land/std@0.193.0/testing/bdd.ts": "0c760348442712ca3ae6102dbb3aa76b49a95ee08fee86c8a0932de53a00e308",
-    "https://esm.sh/preact-render-to-string@6.2.0": "e6ecfa699986fae7c11348a70bd1ff715113ae66481693230fe9afdb14636269",
     "https://esm.sh/preact@10.16.0": "5229650cdac537f87cae81d5001e88d4e7a38cc7e77be978961d2897a733117d",
     "https://esm.sh/preact@10.16.0/jsx-runtime": "9e67b64a5b48299c77d30bffc213735fdcf4b3b5d4ad8ff8d4136f246de5fa34",
     "https://esm.sh/stable/preact@10.16.0/denonext/jsx-runtime.js": "64770c709df77c4b64b79f84a4abf6189fd0c3ea461121870eca0cf2bcca87b0",
     "https://esm.sh/stable/preact@10.16.0/denonext/preact.mjs": "01dc8bdf124926c611c0711081b9c162cf2735cccad7c2bc9914766f633ddb1d",
-    "https://esm.sh/v128/preact-render-to-string@6.2.0/denonext/preact-render-to-string.mjs": "d674b623a36d9c199db245fefa6f0dac4b5c7f6d2c900d46dac076be55123187",
-    "https://esm.sh/v128/preact-render-to-string@6.2.0/src/index.d.ts": "21e6ce019582d244d3e0d99d64dbe6bec5b310776f852e6e7540a8b6db202442",
     "https://esm.sh/v128/preact@10.16.0/jsx-runtime/src/index.d.ts": "e153460ed2b3fe2ad8b93696ecd48fbf73cd628b0b0ea6692b71804a3af69dfd",
     "https://esm.sh/v128/preact@10.16.0/src/index.d.ts": "c79f909cebfc6f5c507c6b8d98e5a6f775c8b23c9c65fd2459244d38f7ae059b",
     "https://esm.sh/v128/preact@10.16.0/src/jsx.d.ts": "fa1cf65643e737e1bfb028304eddc9de9b3f022d1bf2fec8340ccf180b45abfe"
