@@ -8,6 +8,7 @@ jobs:
         os:
           - ubuntu-22.04
     steps:
+      - name: Checkout Repository
       - uses: actions/checkout@v2
       - uses: denoland/setup-deno@v1.1.0
         with:
