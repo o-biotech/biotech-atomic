@@ -8,6 +8,8 @@ on: push
 env:
   MainBranch: main
   CurrentBranch: ${{ github.ref }}
+  MainFormat: "${major}.${minor}.${patch}"
+  PrereleaseFormat: "${major}.${minor}.${patch}-prerelease${increment}"
   
 jobs:
   build:
@@ -38,7 +40,7 @@ jobs:
           tag_prefix: "v"
           major_pattern: "(MAJOR)"
           minor_pattern: "(MINOR)"
-          version_format: ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}
+          version_format: ${{ env.CurrentBranch == env.MainBranch && env.MainFormat || env.PrereleaseFormat }}
           namespace: ${{ env.CurrentBranch == env.MainBranch && "" || env.CurrentBranch }}
           bump_each_commit: false
           search_commit_body: false
