@@ -34,7 +34,7 @@ jobs:
           echo "New version is ${{ steps.semver.outputs.version }}"
           echo "TOKEN ${{ secrets.FATHYM_GITHUB_TOKEN }}"
 
-      - name: Tag commit ${{ steps.semver.outputs.version }}
+      - name: Tag commit
         # if: ${{ fromJSON(steps.changed.outputs.result) }}
         env:
           GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
