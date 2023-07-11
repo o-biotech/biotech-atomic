@@ -9,6 +9,7 @@
     "preact-render-to-string": "https://esm.sh/preact-render-to-string@6.2.0",
     "$std/": "https://deno.land/std@0.193.0/"
   },
+  "lock": false,
   "tasks": {
     "dev-config": "deno task dev-tailwind",
     "dev-tailwind": "echo '{}' > tailwind.config.js",
