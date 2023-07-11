@@ -26,7 +26,7 @@ jobs:
         id: semver
         run: echo "::set-output name=version::$(semver -l | cut -c 2-)"
 
-      - name: Deno Run Build
+      - name: Deno Build
         run: deno task build
 
       - name: Tag commit ${{ steps.semver.outputs.version }}
