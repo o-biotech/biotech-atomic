@@ -9,7 +9,7 @@ env:
   MainBranch: main
   CurrentBranch: ${{ github.ref }}
   IsMain: ${{ env.CurrentBranch == env.MainBranch }}
-  VersionFormat: ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" && "${major}.${minor}.${patch}-prerelease${increment}" }}
+  VersionFormat: ${{ env.IsMain && "${major}.${minor}.${patch}" && "${major}.${minor}.${patch}-prerelease${increment}" }}
   
 jobs:
   build:
