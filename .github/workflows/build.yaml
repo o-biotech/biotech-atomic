@@ -36,3 +36,9 @@ jobs:
         run: |
           git tag ${{ steps.semver.outputs.version }} ${{ steps.commit.outputs.commit }}
         # git push origin ${{ steps.semver.outputs.version }}
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
