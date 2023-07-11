@@ -46,7 +46,7 @@ jobs:
       - name: Deno Build
         run: deno task build
 
-      - name: Processing Version
+      - name: Set Version
         id: version
         uses: paulhatch/semantic-version@v5.0.2
         with:
