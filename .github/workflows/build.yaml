@@ -8,6 +8,7 @@ on: push
 env:
   MainBranch: main
   CurrentBranch: ${{ github.ref }}
+  
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -36,10 +37,12 @@ jobs:
         with:
           tag_prefix: "v"
           major_pattern: "(MAJOR)"
-          # major_regexp_flags: ""
           minor_pattern: "(MINOR)"
-          # minor_regexp_flags: ""
-          version_format: ${{ env.CurrentBranch == env.MainBranch ? "${major}.${minor}.${patch}" : "${major}.${minor}.${patch}-prerelease${increment}" }}
+          version_format: version_format: ${{ 
+            env.CurrentBranch == env.MainBranch ? 
+            "${major}.${minor}.${patch}" :
+            "${major}.${minor}.${patch}-prerelease${increment}" 
+          }}
           namespace: ${{ env.CurrentBranch == env.MainBranch ? "" : env.CurrentBranch }}
           bump_each_commit: false
           search_commit_body: false
