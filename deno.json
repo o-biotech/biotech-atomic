@@ -1,8 +1,11 @@
 {
   "tasks": {
+    "build": "deno task build:fmt && deno task build:lint && deno task test",
+    "build:fmt": "deno fmt --check",
+    "build:lint": "deno lint",
     "dev-config": "deno task dev-tailwind",
-    "dev-tailwind": "echo '{}' > tailwind.config.js",
-    "test": "deno test -A ./tests/tests.ts"
+    "dev-tailwind": "echo '// deno-lint-ignore no-empty\n{}' > tailwind.config.js",
+    "test": "deno test -A ./tests/tests.ts --coverage=cov"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

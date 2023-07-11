@@ -26,15 +26,8 @@ jobs:
         id: semver
         run: echo "::set-output name=version::$(semver -l | cut -c 2-)"
 
-      - name: Deno fmt check
-        run: deno fmt --check
-
-      - name: Deno lint
-        run: deno lint
-
-      - name: Deno test
-        run: |
-          deno test -A --coverage=cov
+      - name: Deno Build
+        run: deno task build
 
       - name: Tag commit ${{ steps.semver.outputs.version }}
         # if: ${{ fromJSON(steps.changed.outputs.result) }}
