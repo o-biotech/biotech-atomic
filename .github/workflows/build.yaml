@@ -31,7 +31,7 @@ jobs:
       - name: Set version format
         id: mainFormat
         if: steps.vars.outputs.currentBranch == env.MainBranch
-        run: echo "format=${{ env.MainFormat }}" >> $GITHUB_OUTPUT\
+        run: echo 'format=${{ env.MainFormat }}' >> $GITHUB_OUTPUT\
 
       - name: Set version format
         id: prereleaseFormat
