@@ -27,7 +27,9 @@ jobs:
         run: echo "::set-output name=version::$(semver -l | cut -c 2-)"
 
       - name: Deno Build
-        run: deno task build
+        run: |
+          deno task build
+          echo "New version is ${{ steps.semver.outputs.version }}"
 
       - name: Tag commit ${{ steps.semver.outputs.version }}
         # if: ${{ fromJSON(steps.changed.outputs.result) }}
