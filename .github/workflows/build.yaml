@@ -31,9 +31,6 @@ jobs:
       - name: Deno Build
         run: deno task build
 
-      - name: Version format 
-        run: echo "Version format ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" || "${major}.${minor}.${patch}-prerelease${increment}" }}"
-
       - name: Version
         id: version
         uses: paulhatch/semantic-version@v5.0.2
