@@ -8,7 +8,8 @@ on: push
 env:
   MainBranch: main
   CurrentBranch: ${{ github.ref }}
-  VersionFormat: ${{ env.CurrentBranch == env.MainBranch ? "${major}.${minor}.${patch}" : "${major}.${minor}.${patch}-prerelease${increment}" }}
+  IsMain: ${{ env.CurrentBranch == env.MainBranch }}
+  VersionFormat: ${{ env.CurrentBranch == env.MainBranch && "${major}.${minor}.${patch}" && "${major}.${minor}.${patch}-prerelease${increment}" }}
   
 jobs:
   build:
@@ -33,7 +34,9 @@ jobs:
         run: deno task build
 
       - name: Version format 
-        run: echo "Version format ${{ env.VersivonFormat }}""
+        run: |
+          echo "Version format ${{ env.VersivonFormat }}""
+          echo "IsMain ${{ env.IsMain }}""
 
       - name: Version
         id: version
