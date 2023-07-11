@@ -10,21 +10,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
         
       - name: Deno Setup
         uses: denoland/setup-deno@v1.1.0
         with:
           deno-version: v1.x.x
-
-      - name: Install semver
-        run: npm install --global semver
-
-      - name: Get current commit
-        run: echo "::set-output name=commit::$(git rev-parse HEAD)"
-
-      - name: Get current version
-        id: semver
-        run: echo "::set-output name=version::$(semver -l | cut -c 2-)"
 
       - name: Deno Build
         run: deno task build
