@@ -21,15 +21,30 @@ jobs:
       - name: Deno Build
         run: deno task build
 
-      - name: New Version
-        run: |
-          echo "New version is ${{ steps.semver.outputs.version }}"
-          echo "TOKEN ${{ secrets.FATHYM_GITHUB_TOKEN }}"
+      - name: Version and Tag
+        uses: paulhatch/semantic-version@v5.0.2
+        with:
+          tag_prefix: "v"
+          major_pattern: "(MAJOR)"
+          # major_regexp_flags: ""
+          minor_pattern: "(MINOR)"
+          # minor_regexp_flags: ""
+          version_format: "${major}.${minor}.${patch}-prerelease${increment}"
+          namespace: biotech-atomic
+          bump_each_commit: false
+          search_commit_body: false
+          user_format_type: "json"
+          enable_prerelease_mode: true
 
-      - name: Tag commit
-        # if: ${{ fromJSON(steps.changed.outputs.result) }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
-        run: |
-          git tag ${{ steps.semver.outputs.version }} ${{ steps.commit.outputs.commit }}
-          git push origin ${{ steps.semver.outputs.version }}
+      # - name: New Version
+      #   run: |
+      #     echo "New version is ${{ steps.semver.outputs.version }}"
+      #     echo "TOKEN ${{ secrets.FATHYM_GITHUB_TOKEN }}"
+
+      # - name: Tag commit
+      #   # if: ${{ fromJSON(steps.changed.outputs.result) }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.FATHYM_GITHUB_TOKEN }}
+      #   run: |
+      #     git tag ${{ steps.semver.outputs.version }} ${{ steps.commit.outputs.commit }}
+      #     git push origin ${{ steps.semver.outputs.version }}
