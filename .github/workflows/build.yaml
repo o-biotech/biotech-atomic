@@ -49,5 +49,5 @@ jobs:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git tag ${{ steps.version.outputs.version_tag }} ${{ steps.commit.outputs.commit }}
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.event.repository.name }} ${{ steps.version.outputs.version_tag }}
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}.git ${{ steps.version.outputs.version_tag }}
           
