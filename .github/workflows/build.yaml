@@ -1,7 +1,10 @@
 name: build
-on: push
+
 permissions:
   contents: write
+
+on: push
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -9,6 +12,7 @@ jobs:
       matrix:
         os:
           - ubuntu-22.04
+          
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
