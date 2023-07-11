@@ -29,24 +29,17 @@ export function Header(props: HeaderProps) {
         </div>
       </div>
       <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <a
-          href="/"
-          className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:ml-2"
-        >
+        <Action href="/">
           Home
-        </a>
-        <a
-          href="/about"
-          className="block px-2 py-1 mt-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >
+        </Action>
+
+        <Action href="/about">
           About
-        </a>
-        <a
-          href="/contact"
-          className="block px-2 py-1 mt-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >
+        </Action>
+
+        <Action href="/contact">
           Contact
-        </a>
+        </Action>
       </nav>
     </header>
   );
