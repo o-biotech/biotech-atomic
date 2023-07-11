@@ -5,6 +5,9 @@ permissions:
 
 on: push
 
+env:
+  MainBranch: main
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -36,8 +39,8 @@ jobs:
           # major_regexp_flags: ""
           minor_pattern: "(MINOR)"
           # minor_regexp_flags: ""
-          version_format: "${major}.${minor}.${patch}-prerelease${increment}"
-          namespace: biotech-atomic
+          version_format: ${{ steps.vars.outputs.branchName == env.MainBranch ? "${major}.${minor}.${patch}" : "${major}.${minor}.${patch}-prerelease${increment}" }}
+          namespace: ${{ steps.vars.outputs.branchName == env.MainBranch ? "" : "biotech-atomic" }}
           bump_each_commit: false
           search_commit_body: false
           user_format_type: "json"
