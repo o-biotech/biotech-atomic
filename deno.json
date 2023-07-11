@@ -1,4 +1,9 @@
 {
+  "tasks": {
+    "dev-config": "deno task dev-tailwind",
+    "dev-tailwind": "echo '{}' > tailwind.config.js",
+    "test": "deno test -A ./tests/tests.ts"
+  },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
@@ -10,11 +15,6 @@
     "$std/": "https://deno.land/std@0.193.0/"
   },
   "lock": false,
-  "tasks": {
-    "dev-config": "deno task dev-tailwind",
-    "dev-tailwind": "echo '{}' > tailwind.config.js",
-    "test": "deno test -A ./tests/tests.ts"
-  },
   "fmt": {
     "files": {
       "include": [],
