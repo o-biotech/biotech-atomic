@@ -8,12 +8,12 @@ import {
   render,
 } from "../test_deps.ts";
 
-import { Button } from "../../src/atoms/Button.tsx";
+import { Action } from "../../src/atoms/Action.tsx";
 import { Header } from "../../src/organisms/Header.tsx";
 
 describe("Header Tests", () => {
   describe("Exists", () => {
-    const html = render(<Header logo={<Button>Hello World</Button>} />);
+    const html = render(<Header logo={<Action>Hello World</Action>} />);
 
     assert(html.includes("Hello World"));
   });

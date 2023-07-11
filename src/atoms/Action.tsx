@@ -1,6 +1,6 @@
 import { JSX } from "preact";
 
-export function Button(
+export function Action(
   props:
     | JSX.HTMLAttributes<HTMLButtonElement>
     | JSX.HTMLAttributes<HTMLAnchorElement>,

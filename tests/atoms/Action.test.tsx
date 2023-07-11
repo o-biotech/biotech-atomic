@@ -8,11 +8,11 @@ import {
   render,
 } from "../test_deps.ts";
 
-import { Button } from "../../src/atoms/Button.tsx";
+import { Action } from "../../src/atoms/Action.tsx";
 
-describe("Button Tests", () => {
+describe("Action Tests", () => {
   describe("Anchor Exists", () => {
-    const html = render(<Button href="/">Hello</Button>);
+    const html = render(<Action href="/">Hello</Action>);
 
     assertEquals(
       html,
@@ -21,7 +21,7 @@ describe("Button Tests", () => {
   });
 
   describe("Button Exists", () => {
-    const html = render(<Button disabled>Hello</Button>);
+    const html = render(<Action disabled>Hello</Action>);
 
     assertEquals(
       html,
