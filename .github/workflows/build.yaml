@@ -36,7 +36,7 @@ jobs:
       - name: Set version format
         id: prereleaseFormat
         if: steps.vars.outputs.currentBranch != env.MainBranch
-        run: echo "format=${{ env.MainFormat }}-${{ steps.vars.outputs.currentBranch }}(increment)" >> $GITHUB_OUTPUT\
+        run: echo "format=${{ env.MainFormat }}-${{ steps.vars.outputs.currentBranch }}${increment}" >> $GITHUB_OUTPUT\
 
       - name: Deno Setup
         uses: denoland/setup-deno@v1.1.0
