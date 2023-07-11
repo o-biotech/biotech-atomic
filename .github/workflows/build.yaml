@@ -7,7 +7,7 @@ on: push
 
 env:
   MainBranch: main
-  CurrentBranch: ${{ github.ref }}
+  CurrentBranch: ${{ github.ref.split('/').pop() }}
   MainFormat: "${major}.${minor}.${patch}"
   PrereleaseFormat: "${major}.${minor}.${patch}-prerelease${increment}"
   
