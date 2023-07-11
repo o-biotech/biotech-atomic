@@ -27,8 +27,7 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          branch=${GITHUB_REF##*/}
-          echo ::set-output name=currentBranch::$branch
+          echo "currentBranch=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
 
       - name: Deno Setup
         uses: denoland/setup-deno@v1.1.0
