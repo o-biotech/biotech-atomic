@@ -6,7 +6,10 @@ export interface FooterProps extends JSX.HTMLAttributes<HTMLElement> {
 
 export function Footer(props: FooterProps) {
   return (
-    <footer {...props} class="bg-gray-900 text-white">
+    <footer
+      {...props}
+      class="bg-gray-900 text-white fixed bottom-0 left-0 w-full"
+    >
       <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="md:flex justify-between">
           <div class="mb-4 md:mb-0">
