@@ -39,7 +39,7 @@ export function Action(
             "block px-4 py-2 font-bold text-white",
             (actionStyle & ActionStyleTypes.LINK) ===
                 ActionStyleTypes.LINK
-              ? "hover:bg-gray-100/155"
+              ? "hover:bg-gray-100/15"
               : "",
             (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
               ? "bg-blue-500 hover:bg-blue-700"
@@ -65,7 +65,7 @@ export function Action(
             "block px-4 py-2 font-bold text-white",
             (actionStyle & ActionStyleTypes.LINK) ===
                 ActionStyleTypes.LINK
-              ? "hover:bg-gray-100/155"
+              ? "hover:bg-gray-100/15"
               : "",
             (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
               ? "bg-blue-500 hover:bg-blue-700"
