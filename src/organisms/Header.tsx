@@ -15,9 +15,9 @@ export function Header(props: HeaderProps) {
   return (
     <header
       {...props}
-      className="bg-blue-500 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+      class="bg-blue-500 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
     >
-      <div className="flex items-center justify-between px-4 py-3 sm:p-0">
+      <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           {props.logo || (
             <Action
@@ -26,18 +26,18 @@ export function Header(props: HeaderProps) {
             >
               <img
                 src={props.logoUrl}
-                className="w-48 sm:w-32"
+                class="w-48 sm:w-32"
                 alt={props.logoAlt}
               />
             </Action>
           )}
         </div>
 
-        <div className="sm:hidden">
+        <div class="sm:hidden">
           <Action type="button">
-            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
               <path
-                className="hidden"
+                class="hidden"
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M4 18h16v-2H4v2ZM4 13h16v-2H4v2ZM4 6v2h16V6H4Z"
@@ -47,16 +47,16 @@ export function Header(props: HeaderProps) {
         </div>
       </div>
 
-      <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <Action href="/" className="text-xl">
+      <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
+        <Action href="/" class="text-xl">
           Home
         </Action>
 
-        <Action href="/about" className="text-xl">
+        <Action href="/about" class="text-xl">
           About
         </Action>
 
-        <Action href="/contact" className="text-xl">
+        <Action href="/contact" class="text-xl">
           Contact
         </Action>
       </nav>

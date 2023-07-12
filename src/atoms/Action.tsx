@@ -30,9 +30,9 @@ export function Action(
     (ActionStyleTypes.SOLID | ActionStyleTypes.OUTLINE |
       ActionStyleTypes.ROUNDED);
 
-  const tempBtn = (
-    <button
-      className={[
+  const shared = (
+    <div
+      class={[
         "block px-4 py-2 font-bold text-white",
         "transition-colors duration-200 ease-out",
         (actionStyle & ActionStyleTypes.ROUNDED) ===
@@ -50,24 +50,25 @@ export function Action(
             ActionStyleTypes.OUTLINE
           ? "border-blue-700 border-solid border hover:border-blue-900"
           : "border-none",
-        props.className || "",
+        props.class || "",
       ].filter((c) => c).join(" ")}
-    />
-  ) as JSX.HTMLAttributes<HTMLButtonElement>;
+    >
+    </div>
+  );
 
   return (
     <>
       {!props.href && (
         <button
           {...(props as ActionButtonProps)}
-          className={tempBtn.className}
+          class={shared.props.class}
         />
       )}
 
       {props.href && (
         <a
           {...(props as ActionAnchorProps)}
-          className={tempBtn.className}
+          class={shared.props.class}
         />
       )}
     </>
