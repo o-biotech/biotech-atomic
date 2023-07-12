@@ -75,20 +75,6 @@ describe("Header Tests", () => {
   });
 
   describe("Nav Simple", () => {
-    const actions: HeaderAction[] = [{
-      Class: "text-xl mx-1",
-      HREF: "/",
-      Text: "Home",
-    }, {
-      Class: "text-xl mx-1",
-      HREF: "/about",
-      Text: "About",
-    }, {
-      Class: "text-xl mx-1",
-      HREF: "/contact",
-      Text: "Contact",
-    }];
-
     const html = render(
       <Header
         logo={Object.assign(new HeaderLogo(), {
@@ -96,7 +82,19 @@ describe("Header Tests", () => {
           LogoUrl: "http://localhost:8000/logo.svg",
           LogoAlt: "Fathym Open BioTech",
         })}
-        nav={actions}
+        nav={[{
+          Class: "text-xl mx-1",
+          HREF: "/",
+          Text: "Home",
+        }, {
+          Class: "text-xl mx-1",
+          HREF: "/about",
+          Text: "About",
+        }, {
+          Class: "text-xl mx-1",
+          HREF: "/contact",
+          Text: "Contact",
+        }]}
       />,
     );
 
