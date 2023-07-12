@@ -22,9 +22,6 @@ export function Header(props: HeaderProps) {
     ? props.logo as HeaderLogo
     : undefined;
 
-  console.log(logo);
-  console.log(details);
-
   return (
     <header
       {...props}
