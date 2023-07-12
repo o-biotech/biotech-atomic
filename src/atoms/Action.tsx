@@ -77,7 +77,7 @@ export function Action(
               : "outline-none",
             (actionStyle & ActionStyleTypes.LINK) ===
                 ActionStyleTypes.LINK
-              ? "hover:underline"
+              ? "hover:bg-gray-100 opacity-5"
               : "",
             props.className || "",
           ].filter((c) => c).join(" ")}
