@@ -16,7 +16,7 @@ describe("Action Tests", () => {
 
     assertEquals(
       html,
-      `<a href="/" class="block px-4 py-2 font-bold text-white transition-colors duration-200 ease-out rounded bg-blue-500 border-blue-700 border-solid border hover:border-blue-900 w-32">Hello</a>`,
+      `<a href="/" class="block px-4 py-2 font-bold text-white transition-colors duration-200 ease-out rounded bg-blue-500 hover:bg-blue-700 hover:bg-opacity-50 border-blue-700 border-solid border hover:border-blue-900 w-32">Hello</a>`,
     );
   });
 
@@ -25,7 +25,7 @@ describe("Action Tests", () => {
 
     assertEquals(
       html,
-      `<button disabled class="block px-4 py-2 font-bold text-white transition-colors duration-200 ease-out rounded bg-blue-500 border-blue-700 border-solid border hover:border-blue-900">Hello</button>`,
+      `<button disabled class="block px-4 py-2 font-bold text-white transition-colors duration-200 ease-out rounded bg-blue-500 hover:bg-blue-700 hover:bg-opacity-50 border-blue-700 border-solid border hover:border-blue-900">Hello</button>`,
     );
   });
 
