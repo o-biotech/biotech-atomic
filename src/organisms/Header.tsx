@@ -13,9 +13,7 @@ export function Header(props: HeaderProps) {
     >
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          <Action href="/">
-            {props.logo}
-          </Action>
+          {props.logo}
         </div>
         <div className="sm:hidden">
           <Action type="button">
