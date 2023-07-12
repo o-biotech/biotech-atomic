@@ -79,17 +79,17 @@ describe("Header Tests", () => {
           LogoAlt: "Fathym Open BioTech",
         })}
         nav={[{
-          Class: "text-xl mx-1",
-          HREF: "/",
-          Text: "Home",
+          class: "text-xl mx-1",
+          href: "/",
+          children: "Home",
         }, {
-          Class: "text-xl mx-1",
-          HREF: "/about",
-          Text: "About",
+          class: "text-xl mx-1",
+          href: "/about",
+          children: "About",
         }, {
-          Class: "text-xl mx-1",
-          HREF: "/contact",
-          Text: "Contact",
+          class: "text-xl mx-1",
+          href: "/contact",
+          children: "Contact",
         }]}
       />,
     );
@@ -98,5 +98,6 @@ describe("Header Tests", () => {
     assert(html.includes("http://localhost:8000/logo.svg"));
     assert(html.includes("Fathym Open BioTech"));
     assert(html.includes("Contact"));
+    assert(html.includes('href="/contact"'));
   });
 });
