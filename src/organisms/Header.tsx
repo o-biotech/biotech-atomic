@@ -31,14 +31,6 @@ export function Header(props: HeaderProps) {
     ? props.logo as HeaderLogo
     : undefined;
 
-  const nav = props.nav instanceof Array<ActionProps>
-    ? undefined
-    : props.nav as ComponentChildren;
-
-  const navActions = props.nav instanceof Array<ActionProps>
-    ? props.nav as Array<ActionProps>
-    : undefined;
-
   return (
     <header
       {...props}

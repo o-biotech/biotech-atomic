@@ -15,7 +15,6 @@ export function ActionGroup(props: ActionGroupProps) {
   const navActions = props.children instanceof Array<ActionProps>
     ? props.children as Array<ActionProps>
     : undefined;
-  console.log(navActions);
 
   return (
     <nav

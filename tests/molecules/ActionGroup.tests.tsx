@@ -30,7 +30,7 @@ describe("Action Group Tests", () => {
         </>
       </ActionGroup>,
     );
-    console.log(html);
+
     assert(html.includes('href="/"'));
     assert(html.includes('href="/contact"'));
     assert(html.includes(">Contact<"));
