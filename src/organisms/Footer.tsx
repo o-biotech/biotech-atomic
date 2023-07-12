@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action } from "../atoms/Action.tsx";
+import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
 
 export interface FooterProps extends JSX.HTMLAttributes<HTMLElement> {
   companyDescription?: string;
@@ -18,6 +18,7 @@ export function Footer(props: FooterProps) {
             <Action
               href="/"
               class="text-2xl uppercase tracking-widest"
+              actionStyle={ActionStyleTypes.LINK}
             >
               {props.companyName}
             </Action>
