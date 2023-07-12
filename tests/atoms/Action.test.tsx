@@ -25,7 +25,7 @@ describe("Action Tests", () => {
 
     assertEquals(
       html,
-      `<button disabled class="px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-700 rounded transition-colors duration-200 ease-out focus:outline-none">Hello</button>`,
+      `<button disabled class=" px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-700 rounded transition-colors duration-200 ease-out focus:outline-none">Hello</button>`,
     );
   });
 });
