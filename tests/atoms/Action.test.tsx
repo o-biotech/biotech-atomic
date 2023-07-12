@@ -8,7 +8,7 @@ import {
   render,
 } from "../test_deps.ts";
 
-import { Action } from "../../src/atoms/Action.tsx";
+import { Action, ActionStyleTypes } from "../../src/atoms/Action.tsx";
 
 describe("Action Tests", () => {
   describe("Anchor Exists", () => {
@@ -26,6 +26,17 @@ describe("Action Tests", () => {
     assertEquals(
       html,
       `<button disabled class="block px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-700 rounded transition-colors duration-200 ease-out outline-blue-900 focus:outline-none">Hello</button>`,
+    );
+  });
+
+  describe("Action Styles: None", () => {
+    const html = render(
+      <Action actionStyle={ActionStyleTypes.NONE}>Hello</Action>,
+    );
+
+    assertEquals(
+      html,
+      `<button actionStyle="16" class="block px-4 py-2 font-bold text-white transition-colors duration-200 ease-out outline-none">Hello</button>`,
     );
   });
 });
