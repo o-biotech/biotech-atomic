@@ -30,7 +30,10 @@ export function Footer(props: FooterProps) {
           </div>
 
           <div class="md:flex md:flex-col md:items-end">
-            <ActionGroup class="flex flex-wrap justify-center -mx-2 mt-4 md:mt-0">
+            <ActionGroup
+              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
+              class="flex flex-wrap justify-center -mx-2 mt-4 md:mt-0"
+            >
               {props.nav}
             </ActionGroup>
 

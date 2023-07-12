@@ -17,7 +17,11 @@ export function ActionGroup(props: ActionGroupProps) {
     : undefined;
 
   return (
-    <nav {...props} class="px-2 pt-2 pb-4 sm:flex sm:p-0">
+    <nav
+      {...props}
+      class={["px-2 pt-2 pb-4 sm:flex sm:p-0", props.class].filter((c) => c)
+        .join(" ")}
+    >
       {nav ||
         navActions?.map((action) => (
           <Action actionStyle={props.actionStyle} {...action} />
