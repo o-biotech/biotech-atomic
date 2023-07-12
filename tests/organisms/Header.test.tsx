@@ -96,8 +96,8 @@ describe("Header Tests", () => {
 
     assert(html.includes('href="/"'));
     assert(html.includes("http://localhost:8000/logo.svg"));
-    assert(html.includes("Fathym Open BioTech"));
-    assert(html.includes("Contact"));
+    assert(html.includes('alt="Fathym Open BioTech"'));
+    assert(html.includes(">Contact<"));
     assert(html.includes('href="/contact"'));
   });
 });
