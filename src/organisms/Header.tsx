@@ -35,11 +35,11 @@ export function Header(props: HeaderProps) {
           Home
         </Action>
 
-        <Action href="/about" className="text-1xl">
+        <Action href="/about" className="text-xl">
           About
         </Action>
 
-        <Action href="/contact" className="text-1xl">
+        <Action href="/contact" className="text-xl">
           Contact
         </Action>
       </nav>
