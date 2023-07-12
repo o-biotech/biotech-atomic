@@ -31,15 +31,15 @@ export function Header(props: HeaderProps) {
       </div>
 
       <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <Action href="/">
+        <Action href="/" className="text-2xl">
           Home
         </Action>
 
-        <Action href="/about">
+        <Action href="/about" className="text-2xl">
           About
         </Action>
 
-        <Action href="/contact">
+        <Action href="/contact" className="text-2xl">
           Contact
         </Action>
       </nav>
