@@ -1,18 +1,31 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
+import {
+  Action,
+  ActionAnchorProps,
+  ActionButtonProps,
+  ActionStyleTypes,
+} from "../atoms/Action.tsx";
 
 export class HeaderLogo {
-  LogoAlt?: string;
+  public LogoAlt?: string;
 
-  LogoUrl?: string;
+  public LogoUrl?: string;
 
-  LogoHref?: string;
+  public LogoHref?: string;
+}
+
+export class HeaderAction {
+  public Class?: string;
+
+  public HREF?: string;
+
+  public Text?: string;
 }
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
-  nav?: ComponentChildren;
+  nav?: ComponentChildren | HeaderAction[];
 }
 
 export function Header(props: HeaderProps) {
@@ -20,12 +33,17 @@ export function Header(props: HeaderProps) {
     ? undefined
     : props.logo as ComponentChildren;
 
-  const details = props.logo instanceof HeaderLogo
+  const logoDetails = props.logo instanceof HeaderLogo
     ? props.logo as HeaderLogo
     : undefined;
 
-  console.log(logo);
-  console.log(details);
+  const nav = props.nav instanceof Array<HeaderAction>
+    ? undefined
+    : props.nav as ComponentChildren;
+
+  const navActions = props.nav instanceof Array<HeaderAction>
+    ? props.nav as Array<HeaderAction>
+    : undefined;
 
   return (
     <header
@@ -36,13 +54,13 @@ export function Header(props: HeaderProps) {
         <div>
           {logo || (
             <Action
-              href={details?.LogoHref}
+              href={logoDetails?.LogoHref}
               actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
             >
               <img
-                src={details?.LogoUrl}
+                src={logoDetails?.LogoUrl}
                 class="w-48 sm:w-32"
-                alt={details?.LogoAlt}
+                alt={logoDetails?.LogoAlt}
               />
             </Action>
           )}
@@ -63,7 +81,12 @@ export function Header(props: HeaderProps) {
       </div>
 
       <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        {props.nav}
+        {nav ||
+          navActions?.map((action) => (
+            <Action href={action.HREF} class={action.Class}>
+              {action.Text}
+            </Action>
+          ))}
       </nav>
     </header>
   );
