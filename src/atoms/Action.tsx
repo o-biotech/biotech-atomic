@@ -49,6 +49,10 @@ export function Action(
                 ActionStyleTypes.OUTLINE
               ? "outline-blue-900 focus:outline-none"
               : "outline-none",
+            (actionStyle & ActionStyleTypes.LINK) ===
+                ActionStyleTypes.LINK
+              ? "hover:underline"
+              : "",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />
@@ -71,6 +75,10 @@ export function Action(
                 ActionStyleTypes.OUTLINE
               ? "outline-blue-900 focus:outline-none"
               : "outline-none",
+            (actionStyle & ActionStyleTypes.LINK) ===
+                ActionStyleTypes.LINK
+              ? "hover:underline"
+              : "",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />

@@ -20,7 +20,7 @@ export function Header(props: HeaderProps) {
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           {props.logo || (
-            <Action href={props.logoHref} actionStyle={ActionStyleTypes.NONE}>
+            <Action href={props.logoHref} actionStyle={ActionStyleTypes.LINK}>
               <img
                 src={props.logoUrl}
                 className="w-48 sm:w-32"
