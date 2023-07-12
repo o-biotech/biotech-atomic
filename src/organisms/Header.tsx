@@ -22,7 +22,7 @@ export function Header(props: HeaderProps) {
           {props.logo || (
             <Action
               href={props.logoHref}
-              actionStyle={ActionStyleTypes.LINK & ActionStyleTypes.ROUNDED}
+              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
             >
               <img
                 src={props.logoUrl}
