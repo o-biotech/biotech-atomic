@@ -15,6 +15,7 @@ export function Header(props: HeaderProps) {
         <div>
           {props.logo}
         </div>
+
         <div className="sm:hidden">
           <Action type="button">
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -28,6 +29,7 @@ export function Header(props: HeaderProps) {
           </Action>
         </div>
       </div>
+
       <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
         <Action href="/">
           Home
