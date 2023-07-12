@@ -1,12 +1,13 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
+import { Action, ActionProps, ActionStyleTypes } from "../atoms/Action.tsx";
+import { ActionGroup } from "../molecules/ActionGroup.tsx";
 
 export interface FooterProps extends JSX.HTMLAttributes<HTMLElement> {
   companyDescription?: string;
 
   companyName: string;
 
-  nav?: ComponentChildren;
+  nav?: ComponentChildren | Array<ActionProps>;
 }
 
 export function Footer(props: FooterProps) {
@@ -29,42 +30,9 @@ export function Footer(props: FooterProps) {
           </div>
 
           <div class="md:flex md:flex-col md:items-end">
-            <nav class="flex flex-wrap justify-center -mx-2 mt-4 md:mt-0">
-              <a
-                href="#"
-                class="px-2 py-1 text-gray-400 hover:text-white md:mx-2"
-              >
-                Home
-              </a>
-
-              <a
-                href="#"
-                class="px-2 py-1 text-gray-400 hover:text-white md:mx-2"
-              >
-                Products
-              </a>
-
-              <a
-                href="#"
-                class="px-2 py-1 text-gray-400 hover:text-white md:mx-2"
-              >
-                Services
-              </a>
-
-              <a
-                href="#"
-                class="px-2 py-1 text-gray-400 hover:text-white md:mx-2"
-              >
-                About Us
-              </a>
-
-              <a
-                href="#"
-                class="px-2 py-1 text-gray-400 hover:text-white md:mx-2"
-              >
-                Contact
-              </a>
-            </nav>
+            <ActionGroup class="flex flex-wrap justify-center -mx-2 mt-4 md:mt-0">
+              {props.nav}
+            </ActionGroup>
 
             <div class="mt-4 md:mt-8">
               <p class="text-gray-400">

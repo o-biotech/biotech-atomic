@@ -1,7 +1,9 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionProps } from "../atoms/Action.tsx";
+import { Action, ActionProps, ActionStyleTypes } from "../atoms/Action.tsx";
 
 export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
+  actionStyle?: ActionStyleTypes;
+
   children?: ComponentChildren | Array<ActionProps>;
 }
 
@@ -15,9 +17,11 @@ export function ActionGroup(props: ActionGroupProps) {
     : undefined;
 
   return (
-    <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
+    <nav {...props} class="px-2 pt-2 pb-4 sm:flex sm:p-0">
       {nav ||
-        navActions?.map((action) => <Action {...action} />)}
+        navActions?.map((action) => (
+          <Action actionStyle={props.actionStyle} {...action} />
+        ))}
     </nav>
   );
 }
