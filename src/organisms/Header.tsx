@@ -31,7 +31,7 @@ export function Header(props: HeaderProps) {
       </div>
 
       <nav className="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <Action href="/" className="text-1xl">
+        <Action href="/" className="text-xl">
           Home
         </Action>
 
