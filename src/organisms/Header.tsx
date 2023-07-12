@@ -8,7 +8,7 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
 
   logoUrl?: string;
 
-  logoActionHref?: string;
+  logoHref?: string;
 }
 
 export function Header(props: HeaderProps) {
@@ -20,7 +20,7 @@ export function Header(props: HeaderProps) {
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           {props.logo || (
-            <Action href={props.logoActionHref}>
+            <Action href={props.logoHref}>
               <img
                 src={props.logoUrl}
                 className="w-48"
