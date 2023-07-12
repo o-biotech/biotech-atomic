@@ -16,7 +16,9 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
 }
 
 export function Header(props: HeaderProps) {
-  const logo = props.logo instanceof HeaderLogo ? undefined : props.logo;
+  const logo = props.logo instanceof HeaderLogo
+    ? undefined
+    : props.logo as ComponentChildren;
 
   const details = props.logo instanceof HeaderLogo
     ? props.logo as HeaderLogo
