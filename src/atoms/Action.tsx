@@ -30,57 +30,44 @@ export function Action(
     (ActionStyleTypes.SOLID | ActionStyleTypes.OUTLINE |
       ActionStyleTypes.ROUNDED);
 
+  const tempBtn = (
+    <button
+      className={[
+        "block px-4 py-2 font-bold text-white",
+        "transition-colors duration-200 ease-out",
+        (actionStyle & ActionStyleTypes.ROUNDED) ===
+            ActionStyleTypes.ROUNDED
+          ? "rounded"
+          : "",
+        (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
+          ? "bg-blue-500"
+          : "",
+        (actionStyle & ActionStyleTypes.LINK) ===
+            ActionStyleTypes.LINK
+          ? "hover:bg-blue-700 hover:bg-opacity-50"
+          : "",
+        (actionStyle & ActionStyleTypes.OUTLINE) ===
+            ActionStyleTypes.OUTLINE
+          ? "border-blue-700 border-solid border hover:border-blue-900"
+          : "border-none",
+        props.className || "",
+      ].filter((c) => c).join(" ")}
+    />
+  ) as JSX.HTMLAttributes<HTMLButtonElement>;
+
   return (
     <>
       {!props.href && (
         <button
           {...(props as ActionButtonProps)}
-          className={[
-            "block px-4 py-2 font-bold text-white",
-            (actionStyle & ActionStyleTypes.LINK) ===
-                ActionStyleTypes.LINK
-              ? "hover:bg-gray-100 hover:bg-opacity-20"
-              : "",
-            (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
-              ? "bg-blue-500 hover:bg-blue-700"
-              : "",
-            (actionStyle & ActionStyleTypes.ROUNDED) ===
-                ActionStyleTypes.ROUNDED
-              ? "rounded"
-              : "",
-            "transition-colors duration-200 ease-out",
-            (actionStyle & ActionStyleTypes.OUTLINE) ===
-                ActionStyleTypes.OUTLINE
-              ? "border-blue-700 border-solid border hover:border-blue-900"
-              : "border-none",
-            props.className || "",
-          ].filter((c) => c).join(" ")}
+          className={tempBtn.className}
         />
       )}
 
       {props.href && (
         <a
           {...(props as ActionAnchorProps)}
-          className={[
-            "block px-4 py-2 font-bold text-white",
-            (actionStyle & ActionStyleTypes.LINK) ===
-                ActionStyleTypes.LINK
-              ? "hover:bg-gray-100 hover:bg-opacity-20"
-              : "",
-            (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
-              ? "bg-blue-500 hover:bg-blue-700"
-              : "",
-            (actionStyle & ActionStyleTypes.ROUNDED) ===
-                ActionStyleTypes.ROUNDED
-              ? "rounded"
-              : "",
-            "transition-colors duration-200 ease-out",
-            (actionStyle & ActionStyleTypes.OUTLINE) ===
-                ActionStyleTypes.OUTLINE
-              ? "border-blue-700 border-solid border hover:border-blue-900"
-              : "border-none",
-            props.className || "",
-          ].filter((c) => c).join(" ")}
+          className={tempBtn.className}
         />
       )}
     </>
