@@ -26,7 +26,6 @@ export function Header(props: HeaderProps) {
                 className="w-48"
                 alt={props.logoAlt}
               />
-              <img src={props.logoUrl} />
             </Action>
           )}
         </div>
