@@ -52,7 +52,7 @@ export function Action(
             (actionStyle & ActionStyleTypes.OUTLINE) ===
                 ActionStyleTypes.OUTLINE
               ? "border-blue-900 border-solid focus:border-none"
-              : "outline-none",
+              : "border-none",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />
@@ -78,7 +78,7 @@ export function Action(
             (actionStyle & ActionStyleTypes.OUTLINE) ===
                 ActionStyleTypes.OUTLINE
               ? "border-blue-900 border-solid focus:border-none"
-              : "outline-none",
+              : "border-none",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />
