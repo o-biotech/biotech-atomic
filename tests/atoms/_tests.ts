@@ -1,1 +1,1 @@
-import "./Action.test.tsx";
+import "./Action.tests.tsx";

@@ -1,2 +1,2 @@
-import "./Footer.test.tsx";
-import "./Header.test.tsx";
+import "./Footer.tests.tsx";
+import "./Header.tests.tsx";
