@@ -3,6 +3,12 @@ import { Action } from "../atoms/Action.tsx";
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren;
+
+  logoAlt?: string;
+
+  logoUrl?: string;
+
+  logoActionHref?: string;
 }
 
 export function Header(props: HeaderProps) {
@@ -13,7 +19,16 @@ export function Header(props: HeaderProps) {
     >
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          {props.logo}
+          {props.logo || (
+            <Action href={props.logoActionHref}>
+              <img
+                src={props.logoUrl}
+                className="w-48"
+                alt={props.logoAlt}
+              />
+              <img src={props.logoUrl} />
+            </Action>
+          )}
         </div>
 
         <div className="sm:hidden">
