@@ -21,10 +21,10 @@ export interface ActionButtonProps
   extends JSX.HTMLAttributes<HTMLButtonElement>, ActionProps {
 }
 
+export type ActionOptions = ActionAnchorProps | ActionButtonProps;
+
 export function Action(
-  props:
-    | ActionButtonProps
-    | ActionAnchorProps,
+  props: ActionOptions,
 ) {
   const actionStyle = props.actionStyle ||
     (ActionStyleTypes.SOLID |

@@ -3,8 +3,10 @@ import {
   Action,
   ActionAnchorProps,
   ActionButtonProps,
+  ActionOptions,
   ActionStyleTypes,
 } from "../atoms/Action.tsx";
+import { ActionGroup } from "../molecules/ActionGroup.tsx";
 
 export class HeaderLogo {
   public LogoAlt?: string;
@@ -14,18 +16,10 @@ export class HeaderLogo {
   public LogoHref?: string;
 }
 
-export class HeaderAction {
-  public Class?: string;
-
-  public HREF?: string;
-
-  public Text?: string;
-}
-
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
-  nav?: ComponentChildren | HeaderAction[];
+  nav?: ComponentChildren | Array<ActionOptions>;
 }
 
 export function Header(props: HeaderProps) {
@@ -37,12 +31,12 @@ export function Header(props: HeaderProps) {
     ? props.logo as HeaderLogo
     : undefined;
 
-  const nav = props.nav instanceof Array<HeaderAction>
+  const nav = props.nav instanceof Array<ActionOptions>
     ? undefined
     : props.nav as ComponentChildren;
 
-  const navActions = props.nav instanceof Array<HeaderAction>
-    ? props.nav as Array<HeaderAction>
+  const navActions = props.nav instanceof Array<ActionOptions>
+    ? props.nav as Array<ActionOptions>
     : undefined;
 
   return (
@@ -80,14 +74,9 @@ export function Header(props: HeaderProps) {
         </div>
       </div>
 
-      <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        {nav ||
-          navActions?.map((action) => (
-            <Action href={action.HREF} class={action.Class}>
-              {action.Text}
-            </Action>
-          ))}
-      </nav>
+      <ActionGroup>
+        {props.nav}
+      </ActionGroup>
     </header>
   );
 }

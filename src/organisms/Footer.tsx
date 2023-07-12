@@ -18,7 +18,7 @@ export function Footer(props: FooterProps) {
             <Action
               href="/"
               class="text-2xl uppercase tracking-widest"
-              actionStyle={ActionStyleTypes.LINK}
+              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
             >
               {props.companyName}
             </Action>
