@@ -12,7 +12,7 @@ export function Header(props: HeaderProps) {
       className="bg-blue-500 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
     >
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
-        <div>
+        <div className="w-32">
           <a href="/" className="text-white font-bold text-xl">{props.logo}</a>
         </div>
         <div className="sm:hidden">
