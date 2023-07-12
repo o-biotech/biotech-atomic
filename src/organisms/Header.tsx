@@ -47,16 +47,16 @@ export function Header(props: HeaderProps) {
         </div>
       </div>
 
-      <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0 [&>*]:px-2">
-        <Action href="/" class="text-xl">
+      <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
+        <Action href="/" class="text-xl px-1">
           Home
         </Action>
 
-        <Action href="/about" class="text-xl">
+        <Action href="/about" class="text-xl px-1">
           About
         </Action>
 
-        <Action href="/contact" class="text-xl">
+        <Action href="/contact" class="text-xl px-1">
           Contact
         </Action>
       </nav>
