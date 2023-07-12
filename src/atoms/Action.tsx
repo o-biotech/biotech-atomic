@@ -1,29 +1,77 @@
 import { JSX } from "preact";
 
+export enum ActionStyleTypes {
+  SOLID = 1 << 0,
+  OUTLINE = 1 << 1,
+  LINK = 1 << 2,
+  ROUNDED = 1 << 3,
+  All = ~0 << 4,
+}
+
+export interface ActionProps {
+  actionStyle?: ActionStyleTypes;
+}
+
+export interface ActionAnchorProps
+  extends JSX.HTMLAttributes<HTMLAnchorElement>, ActionProps {
+}
+
+export interface ActionButtonProps
+  extends JSX.HTMLAttributes<HTMLButtonElement>, ActionProps {
+}
+
 export function Action(
   props:
-    | JSX.HTMLAttributes<HTMLButtonElement>
-    | JSX.HTMLAttributes<HTMLAnchorElement>,
+    | ActionButtonProps
+    | ActionAnchorProps,
 ) {
+  const actionStyle = props.actionStyle ||
+    (ActionStyleTypes.SOLID | ActionStyleTypes.OUTLINE |
+      ActionStyleTypes.ROUNDED);
+
   return (
     <>
       {!props.href && (
         <button
-          {...(props as JSX.HTMLAttributes<HTMLButtonElement>)}
+          {...(props as ActionButtonProps)}
           className={[
-            "block px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-700 rounded transition-colors duration-200 ease-out focus:outline-none",
+            "block px-4 py-2 font-bold text-white",
+            (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
+              ? "bg-blue-500 hover:bg-blue-700"
+              : "",
+            (actionStyle & ActionStyleTypes.ROUNDED) ===
+                ActionStyleTypes.ROUNDED
+              ? "rounded"
+              : "",
+            "transition-colors duration-200 ease-out",
+            (actionStyle & ActionStyleTypes.OUTLINE) ===
+                ActionStyleTypes.OUTLINE
+              ? "outline-blue-900 focus:outline-none"
+              : "outline-none",
             props.className || "",
-          ].join(" ")}
+          ].filter((c) => c).join(" ")}
         />
       )}
 
       {props.href && (
         <a
-          {...(props as JSX.HTMLAttributes<HTMLAnchorElement>)}
+          {...(props as ActionAnchorProps)}
           className={[
-            "block px-4 py-2 font-bold text-white bg-blue-500 hover:bg-blue-700 rounded transition-colors duration-200 ease-out focus:outline-none",
-            props.className,
-          ].join(" ")}
+            "block px-4 py-2 font-bold text-white",
+            (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
+              ? "bg-blue-500 hover:bg-blue-700"
+              : "",
+            (actionStyle & ActionStyleTypes.ROUNDED) ===
+                ActionStyleTypes.ROUNDED
+              ? "rounded"
+              : "",
+            "transition-colors duration-200 ease-out",
+            (actionStyle & ActionStyleTypes.OUTLINE) ===
+                ActionStyleTypes.OUTLINE
+              ? "outline-blue-900 focus:outline-none"
+              : "outline-none",
+            props.className || "",
+          ].filter((c) => c).join(" ")}
         />
       )}
     </>
