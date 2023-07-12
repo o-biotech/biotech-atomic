@@ -9,22 +9,16 @@ export enum ActionStyleTypes {
   All = ~0 << 5,
 }
 
-export interface ActionProps {
+export type ActionAnchorProps = JSX.HTMLAttributes<HTMLAnchorElement>;
+
+export type ActionButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
+
+export type ActionProps = (ActionAnchorProps | ActionButtonProps) & {
   actionStyle?: ActionStyleTypes;
-}
-
-export interface ActionAnchorProps
-  extends JSX.HTMLAttributes<HTMLAnchorElement>, ActionProps {
-}
-
-export interface ActionButtonProps
-  extends JSX.HTMLAttributes<HTMLButtonElement>, ActionProps {
-}
-
-export type ActionOptions = ActionAnchorProps | ActionButtonProps;
+};
 
 export function Action(
-  props: ActionOptions,
+  props: ActionProps,
 ) {
   const actionStyle = props.actionStyle ||
     (ActionStyleTypes.SOLID |

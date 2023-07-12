@@ -3,7 +3,7 @@ import {
   Action,
   ActionAnchorProps,
   ActionButtonProps,
-  ActionOptions,
+  ActionProps,
   ActionStyleTypes,
 } from "../atoms/Action.tsx";
 import { ActionGroup } from "../molecules/ActionGroup.tsx";
@@ -19,7 +19,7 @@ export class HeaderLogo {
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
-  nav?: ComponentChildren | Array<ActionOptions>;
+  nav?: ComponentChildren | Array<ActionProps>;
 }
 
 export function Header(props: HeaderProps) {
@@ -31,12 +31,12 @@ export function Header(props: HeaderProps) {
     ? props.logo as HeaderLogo
     : undefined;
 
-  const nav = props.nav instanceof Array<ActionOptions>
+  const nav = props.nav instanceof Array<ActionProps>
     ? undefined
     : props.nav as ComponentChildren;
 
-  const navActions = props.nav instanceof Array<ActionOptions>
-    ? props.nav as Array<ActionOptions>
+  const navActions = props.nav instanceof Array<ActionProps>
+    ? props.nav as Array<ActionProps>
     : undefined;
 
   return (

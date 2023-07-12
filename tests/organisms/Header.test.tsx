@@ -8,7 +8,7 @@ import {
   render,
 } from "../test_deps.ts";
 
-import { Action, ActionOptions } from "../../src/atoms/Action.tsx";
+import { Action } from "../../src/atoms/Action.tsx";
 import { Header, HeaderLogo } from "../../src/organisms/Header.tsx";
 
 describe("Header Tests", () => {

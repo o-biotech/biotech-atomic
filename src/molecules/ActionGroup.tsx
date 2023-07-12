@@ -1,17 +1,17 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionOptions } from "../atoms/Action.tsx";
+import { Action, ActionProps } from "../atoms/Action.tsx";
 
 export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
-  children?: ComponentChildren | Array<ActionOptions>;
+  children?: ComponentChildren | Array<ActionProps>;
 }
 
 export function ActionGroup(props: ActionGroupProps) {
-  const nav = props.children instanceof Array<ActionOptions>
+  const nav = props.children instanceof Array<ActionProps>
     ? undefined
     : props.children as ComponentChildren;
 
-  const navActions = props.children instanceof Array<ActionOptions>
-    ? props.children as Array<ActionOptions>
+  const navActions = props.children instanceof Array<ActionProps>
+    ? props.children as Array<ActionProps>
     : undefined;
 
   return (
