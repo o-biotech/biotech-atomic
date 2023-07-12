@@ -37,6 +37,10 @@ export function Action(
           {...(props as ActionButtonProps)}
           className={[
             "block px-4 py-2 font-bold text-white",
+            (actionStyle & ActionStyleTypes.LINK) ===
+                ActionStyleTypes.LINK
+              ? "hover:bg-gray-100/155"
+              : "",
             (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
               ? "bg-blue-500 hover:bg-blue-700"
               : "",
@@ -49,10 +53,6 @@ export function Action(
                 ActionStyleTypes.OUTLINE
               ? "outline-blue-900 focus:outline-none"
               : "outline-none",
-            (actionStyle & ActionStyleTypes.LINK) ===
-                ActionStyleTypes.LINK
-              ? "hover:bg-gray-100 hover:bg-opacity-15"
-              : "",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />
@@ -63,6 +63,10 @@ export function Action(
           {...(props as ActionAnchorProps)}
           className={[
             "block px-4 py-2 font-bold text-white",
+            (actionStyle & ActionStyleTypes.LINK) ===
+                ActionStyleTypes.LINK
+              ? "hover:bg-gray-100/155"
+              : "",
             (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
               ? "bg-blue-500 hover:bg-blue-700"
               : "",
@@ -75,10 +79,6 @@ export function Action(
                 ActionStyleTypes.OUTLINE
               ? "outline-blue-900 focus:outline-none"
               : "outline-none",
-            (actionStyle & ActionStyleTypes.LINK) ===
-                ActionStyleTypes.LINK
-              ? "hover:bg-gray-100 hover:bg-opacity-15"
-              : "",
             props.className || "",
           ].filter((c) => c).join(" ")}
         />
