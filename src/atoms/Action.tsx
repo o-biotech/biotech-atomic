@@ -51,7 +51,7 @@ export function Action(
             "transition-colors duration-200 ease-out",
             (actionStyle & ActionStyleTypes.OUTLINE) ===
                 ActionStyleTypes.OUTLINE
-              ? "border-blue-900 border-solid focus:border-none"
+              ? "border-blue-900 border-solid border focus:border-none"
               : "border-none",
             props.className || "",
           ].filter((c) => c).join(" ")}
@@ -77,7 +77,7 @@ export function Action(
             "transition-colors duration-200 ease-out",
             (actionStyle & ActionStyleTypes.OUTLINE) ===
                 ActionStyleTypes.OUTLINE
-              ? "border-blue-900 border-solid focus:border-none"
+              ? "border-blue-900 border-solid border focus:border-none"
               : "border-none",
             props.className || "",
           ].filter((c) => c).join(" ")}
