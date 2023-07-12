@@ -28,7 +28,7 @@ export function Action(
 ) {
   const actionStyle = props.actionStyle ||
     (ActionStyleTypes.SOLID | ActionStyleTypes.OUTLINE |
-      ActionStyleTypes.ROUNDED);
+      ActionStyleTypes.ROUNDED | ActionStyleTypes.LINK);
 
   const shared = (
     <div
