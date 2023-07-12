@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action } from "../atoms/Action.tsx";
+import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren;
@@ -20,7 +20,7 @@ export function Header(props: HeaderProps) {
       <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           {props.logo || (
-            <Action href={props.logoHref}>
+            <Action href={props.logoHref} actionStyle={ActionStyleTypes.}>
               <img
                 src={props.logoUrl}
                 className="w-48 sm:w-32"

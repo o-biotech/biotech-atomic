@@ -5,7 +5,8 @@ export enum ActionStyleTypes {
   OUTLINE = 1 << 1,
   LINK = 1 << 2,
   ROUNDED = 1 << 3,
-  All = ~0 << 4,
+  NONE = 1 << 4,
+  All = ~0 << 5,
 }
 
 export interface ActionProps {
