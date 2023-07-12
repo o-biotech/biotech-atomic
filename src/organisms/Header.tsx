@@ -1,14 +1,18 @@
 import { ComponentChildren, JSX } from "preact";
 import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
 
+export interface HeaderLogo {
+  LogoAlt?: string;
+
+  LogoUrl?: string;
+
+  LogoHref?: string;
+}
+
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
-  logo?: ComponentChildren;
+  logo?: ComponentChildren & HeaderLogo;
 
-  logoAlt?: string;
-
-  logoUrl?: string;
-
-  logoHref?: string;
+  nav?: ComponentChildren;
 }
 
 export function Header(props: HeaderProps) {
@@ -19,15 +23,15 @@ export function Header(props: HeaderProps) {
     >
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          {props.logo || (
+          {!props.logo?.LogoHref ? props.logo : (
             <Action
-              href={props.logoHref}
+              href={props.logo?.LogoHref}
               actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
             >
               <img
-                src={props.logoUrl}
+                src={props.logo?.LogoUrl}
                 class="w-48 sm:w-32"
-                alt={props.logoAlt}
+                alt={props.logo?.LogoAlt}
               />
             </Action>
           )}
@@ -48,17 +52,7 @@ export function Header(props: HeaderProps) {
       </div>
 
       <nav class="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <Action href="/" class="text-xl mx-1">
-          Home
-        </Action>
-
-        <Action href="/about" class="text-xl mx-1">
-          About
-        </Action>
-
-        <Action href="/contact" class="text-xl mx-1">
-          Contact
-        </Action>
+        {props.nav}
       </nav>
     </header>
   );
