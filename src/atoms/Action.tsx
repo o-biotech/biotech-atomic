@@ -27,7 +27,7 @@ export function Action(
     | ActionAnchorProps,
 ) {
   const actionStyle = props.actionStyle ||
-    (ActionStyleTypes.SOLID | ActionStyleTypes.OUTLINE |
+    (ActionStyleTypes.SOLID |
       ActionStyleTypes.ROUNDED | ActionStyleTypes.LINK);
 
   const shared = (
@@ -44,7 +44,7 @@ export function Action(
           : "",
         (actionStyle & ActionStyleTypes.LINK) ===
             ActionStyleTypes.LINK
-          ? "hover:bg-blue-700 hover:bg-opacity-50"
+          ? "hover:bg-blue-700 hover:bg-opacity-80"
           : "",
         (actionStyle & ActionStyleTypes.OUTLINE) ===
             ActionStyleTypes.OUTLINE
