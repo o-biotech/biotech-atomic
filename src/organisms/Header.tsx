@@ -1,7 +1,7 @@
 import { ComponentChildren, JSX } from "preact";
 import { Action, ActionStyleTypes } from "../atoms/Action.tsx";
 
-export interface HeaderLogo {
+export class HeaderLogo {
   LogoAlt?: string;
 
   LogoUrl?: string;
@@ -10,12 +10,21 @@ export interface HeaderLogo {
 }
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
-  logo?: ComponentChildren & HeaderLogo;
+  logo?: ComponentChildren | HeaderLogo;
 
   nav?: ComponentChildren;
 }
 
 export function Header(props: HeaderProps) {
+  const logo = props.logo instanceof HeaderLogo ? undefined : props.logo;
+
+  const details = props.logo instanceof HeaderLogo
+    ? props.logo as HeaderLogo
+    : undefined;
+
+  console.log(logo);
+  console.log(details);
+
   return (
     <header
       {...props}
@@ -23,15 +32,15 @@ export function Header(props: HeaderProps) {
     >
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          {!props.logo?.LogoHref ? props.logo : (
+          {logo || (
             <Action
-              href={props.logo?.LogoHref}
+              href={details?.LogoHref}
               actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
             >
               <img
-                src={props.logo?.LogoUrl}
+                src={details?.LogoUrl}
                 class="w-48 sm:w-32"
-                alt={props.logo?.LogoAlt}
+                alt={details?.LogoAlt}
               />
             </Action>
           )}
