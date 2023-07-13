@@ -31,7 +31,7 @@ describe("Action Tests", () => {
 
   describe("Action Styles: None", () => {
     const html = render(
-      <Action actionStyle={ActionStyleTypes.NONE}>Hello</Action>,
+      <Action actionStyle={ActionStyleTypes.None}>Hello</Action>,
     );
 
     assertEquals(

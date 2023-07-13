@@ -1,12 +1,26 @@
-import { JSX } from "preact";
+import { ComponentChildren, JSX } from "preact";
 
 export enum ActionStyleTypes {
-  SOLID = 1 << 0,
-  OUTLINE = 1 << 1,
-  LINK = 1 << 2,
-  ROUNDED = 1 << 3,
-  NONE = 1 << 4,
+  Solid = 1 << 0,
+  Outline = 1 << 1,
+  Link = 1 << 2,
+  Rounded = 1 << 3,
+  None = 1 << 4,
   All = ~0 << 5,
+}
+
+export function useActionChildren(
+  children: ComponentChildren | Array<ActionProps>,
+): { nav: ComponentChildren; navActions: ActionProps[] | undefined } {
+  const nav = children instanceof Array<ActionProps>
+    ? undefined
+    : children as ComponentChildren;
+
+  const navActions = children instanceof Array<ActionProps>
+    ? children as Array<ActionProps>
+    : undefined;
+
+  return { nav, navActions };
 }
 
 export type ActionAnchorProps = JSX.HTMLAttributes<HTMLAnchorElement>;
@@ -21,27 +35,27 @@ export function Action(
   props: ActionProps,
 ) {
   const actionStyle = props.actionStyle ||
-    (ActionStyleTypes.SOLID |
-      ActionStyleTypes.ROUNDED | ActionStyleTypes.LINK);
+    (ActionStyleTypes.Solid |
+      ActionStyleTypes.Rounded | ActionStyleTypes.Link);
 
   const shared = (
     <div
       class={[
         "block px-4 py-2 font-bold text-white",
         "transition-colors duration-200 ease-out",
-        (actionStyle & ActionStyleTypes.ROUNDED) ===
-            ActionStyleTypes.ROUNDED
+        (actionStyle & ActionStyleTypes.Rounded) ===
+            ActionStyleTypes.Rounded
           ? "rounded"
           : "",
-        (actionStyle & ActionStyleTypes.SOLID) === ActionStyleTypes.SOLID
+        (actionStyle & ActionStyleTypes.Solid) === ActionStyleTypes.Solid
           ? "bg-blue-500"
           : "",
-        (actionStyle & ActionStyleTypes.LINK) ===
-            ActionStyleTypes.LINK
+        (actionStyle & ActionStyleTypes.Link) ===
+            ActionStyleTypes.Link
           ? "hover:bg-blue-700 hover:bg-opacity-80"
           : "",
-        (actionStyle & ActionStyleTypes.OUTLINE) ===
-            ActionStyleTypes.OUTLINE
+        (actionStyle & ActionStyleTypes.Outline) ===
+            ActionStyleTypes.Outline
           ? "border-blue-700 border-solid border hover:border-blue-900"
           : "border-none",
         props.class || "",

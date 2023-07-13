@@ -19,7 +19,7 @@ export function Footer(props: FooterProps) {
             <Action
               href="/"
               class="text-2xl uppercase tracking-widest"
-              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
+              actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
             >
               {props.companyName}
             </Action>
@@ -31,7 +31,7 @@ export function Footer(props: FooterProps) {
 
           <div class="md:flex md:flex-col md:items-end">
             <ActionGroup
-              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
+              actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
               class="flex flex-wrap justify-center -mx-2 mt-4 md:mt-0"
             >
               {props.nav}

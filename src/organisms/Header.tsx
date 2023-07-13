@@ -41,7 +41,7 @@ export function Header(props: HeaderProps) {
           {logo || (
             <Action
               href={logoDetails?.LogoHref}
-              actionStyle={ActionStyleTypes.LINK | ActionStyleTypes.ROUNDED}
+              actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
             >
               <img
                 src={logoDetails?.LogoUrl}

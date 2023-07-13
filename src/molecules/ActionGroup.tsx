@@ -1,5 +1,10 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionProps, ActionStyleTypes } from "../atoms/Action.tsx";
+import {
+  Action,
+  ActionProps,
+  ActionStyleTypes,
+  useActionChildren,
+} from "../atoms/Action.tsx";
 
 export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
   actionStyle?: ActionStyleTypes;
@@ -8,13 +13,7 @@ export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
 }
 
 export function ActionGroup(props: ActionGroupProps) {
-  const nav = props.children instanceof Array<ActionProps>
-    ? undefined
-    : props.children as ComponentChildren;
-
-  const navActions = props.children instanceof Array<ActionProps>
-    ? props.children as Array<ActionProps>
-    : undefined;
+  const { nav, navActions } = useActionChildren(props);
 
   return (
     <nav
