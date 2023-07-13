@@ -20,7 +20,7 @@ export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
 }
 
 export function Menu(props: MenuProps) {
-  const { nav, navActions } = useActionChildren(props);
+  const { nav, navActions } = useActionChildren(props.children);
 
   let showMenu = false;
 
