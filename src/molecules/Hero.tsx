@@ -41,7 +41,7 @@ export function Hero(props: HeroProps) {
         (heroStyle & HeroStyleTypes.Inset) ===
             HeroStyleTypes.Inset
           ? "w-full"
-          : "md:w-[80%] sm:[90%]",
+          : "md:w-[80%] sm:[90%] my-4",
         "bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
         (heroStyle & HeroStyleTypes.Rounded) ===
             HeroStyleTypes.Rounded
