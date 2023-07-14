@@ -1,6 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { useRef, useState } from "preact/hooks";
-import { useSignal } from "@preact/signals";
+import { useEffect, useState } from "preact/hooks";
 import {
   Action,
   ActionProps,
@@ -30,9 +29,26 @@ export function Menu(props: MenuProps) {
 
   const [showMenu, setShowMenu] = useState(false);
 
-  const menuCloseCheck = (e: JSX.TargetedMouseEvent<HTMLDivElement>) => {
-    setShowMenu(!!e.currentTarget!.closest(".menu-wrapper"));
+  const menuCloseCheck = (eTarget: HTMLDivElement) => {
+    setShowMenu(!!eTarget!.closest(".menu-wrapper"));
   };
+
+  const outsideClickHandler = () => {
+    const eventHandler = (e: MouseEvent) => {
+      menuCloseCheck(e.target as HTMLDivElement);
+    };
+
+    window.document.addEventListener("click", eventHandler);
+
+    return () => {
+      window.document.removeEventListener(
+        "click",
+        eventHandler,
+      );
+    };
+  };
+
+  useEffect(outsideClickHandler, []);
 
   return (
     <div
