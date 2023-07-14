@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { forwardRef } from "npm:preact-compat";
+import { forwardRef } from "preact/compat";
 import { Ref, useEffect, useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import {
