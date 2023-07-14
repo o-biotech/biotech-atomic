@@ -52,7 +52,7 @@ export function Menu(props: MenuProps) {
               ? "fixed top-0 bottom-0 left-0 z-50"
               : null,
             props.menuStyle === MenuStyleTypes.Responsive
-              ? "absolute right-0 mt-2 lt-sm:fixed lt-sm:top-0 lt-sm:bottom-0 lt-sm:left-0 lt-sm:right-auto lt-sm:z-50 lt-sm:mt-0"
+              ? "fixed top-0 bottom-0 left-0 z-50 md:absolute md:right-0 md:mt-2 md:top-auto md:bottom-auto md:left-auto"
               : null,
           ].filter((c) => c).join(" ")}
         >
