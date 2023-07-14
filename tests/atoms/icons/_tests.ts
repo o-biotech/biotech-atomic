@@ -1,0 +1,1 @@
+import "./UserIcon.tests.tsx";
