@@ -1,4 +1,5 @@
-export function factory<T extends { new (...args: object[]): {} }>(
+// deno-lint-ignore no-explicit-any
+export function factory<T extends { new (...args: any[]): any }>(
   type: T,
   data?: InstanceType<T>,
 ): InstanceType<T> {
