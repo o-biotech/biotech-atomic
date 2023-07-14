@@ -18,7 +18,11 @@ export class HeaderLogo {
 
 export function useHeaderLogoChildren(
   children: ComponentChildren | Array<ActionProps>,
-): { logo: ComponentChildren; logoDetails: HeaderLogo | undefined } {
+): {
+  logo: ComponentChildren;
+  logoDetails: HeaderLogo | undefined;
+  logoAction: JSX.Element;
+} {
   const logo = children instanceof HeaderLogo
     ? undefined
     : children as ComponentChildren;
@@ -27,7 +31,20 @@ export function useHeaderLogoChildren(
     ? children as HeaderLogo
     : undefined;
 
-  return { logo, logoDetails };
+  const logoAction = (
+    <Action
+      href={logoDetails?.LogoHref}
+      actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
+    >
+      <img
+        src={logoDetails?.LogoUrl}
+        class="w-48 sm:w-32"
+        alt={logoDetails?.LogoAlt}
+      />
+    </Action>
+  );
+
+  return { logo, logoDetails, logoAction };
 }
 
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
@@ -37,7 +54,7 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
 }
 
 export function Header(props: HeaderProps) {
-  const { logo, logoDetails } = useHeaderLogoChildren(props.logo);
+  const { logo, logoAction } = useHeaderLogoChildren(props.logo);
 
   return (
     <header
@@ -49,18 +66,7 @@ export function Header(props: HeaderProps) {
     >
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
-          {logo || (
-            <Action
-              href={logoDetails?.LogoHref}
-              actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
-            >
-              <img
-                src={logoDetails?.LogoUrl}
-                class="w-48 sm:w-32"
-                alt={logoDetails?.LogoAlt}
-              />
-            </Action>
-          )}
+          {logo || logoAction}
         </div>
 
         <div class="sm:hidden">
