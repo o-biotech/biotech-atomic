@@ -30,22 +30,6 @@ export function Menu(props: MenuProps) {
 
   const [showMenu, setShowMenu] = useState(false);
 
-  // const toggleRef = useRef<HTMLButtonElement>(null);
-
-  // const ToggleMenu = () => {
-  //   const clickHandler = (event: MouseEvent | TouchEvent) => {
-  //     showMenu.value = !showMenu.value;
-  //   };
-
-  //   console.log(toggleRef.current);
-
-  //   toggleRef.current?.addEventListener("click", clickHandler);
-
-  //   return () => toggleRef.current?.removeEventListener("click", clickHandler);
-  // };
-
-  // useEffect(ToggleMenu, []);
-
   return (
     <div class="relative">
       <Action
@@ -59,11 +43,18 @@ export function Menu(props: MenuProps) {
 
       {showMenu && (
         <div
-          class={`bg-white shadow-md ${
+          class={[
+            "bg-white shadow-md",
             props.menuStyle === MenuStyleTypes.Popover
               ? "absolute right-0 mt-2"
-              : "fixed top-0 bottom-0 left-0 z-50"
-          }`}
+              : null,
+            props.menuStyle === MenuStyleTypes.Slideout
+              ? "fixed top-0 bottom-0 left-0 z-50"
+              : null,
+            props.menuStyle === MenuStyleTypes.Responsive
+              ? "absolute right-0 mt-2 sm:fixed sm:top-0 sm:bottom-0 sm:left-0 sm:right-auto sm:z-50"
+              : null,
+          ].filter((c) => c).join(" ")}
         >
           {nav || (
             <ul class="divide-y divide-gray-200">
