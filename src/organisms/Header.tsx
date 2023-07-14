@@ -16,6 +16,20 @@ export class HeaderLogo {
   public LogoHref?: string;
 }
 
+export function useHeaderLogoChildren(
+  children: ComponentChildren | Array<ActionProps>,
+): { logo: ComponentChildren; logoDetails: HeaderLogo | undefined } {
+  const logo = children instanceof HeaderLogo
+    ? undefined
+    : children as ComponentChildren;
+
+  const logoDetails = children instanceof HeaderLogo
+    ? children as HeaderLogo
+    : undefined;
+
+  return { logo, logoDetails };
+}
+
 export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
@@ -23,13 +37,7 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
 }
 
 export function Header(props: HeaderProps) {
-  const logo = props.logo instanceof HeaderLogo
-    ? undefined
-    : props.logo as ComponentChildren;
-
-  const logoDetails = props.logo instanceof HeaderLogo
-    ? props.logo as HeaderLogo
-    : undefined;
+  const { logo, logoDetails } = useHeaderLogoChildren(props.logo);
 
   return (
     <header
