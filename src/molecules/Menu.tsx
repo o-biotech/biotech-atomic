@@ -37,7 +37,9 @@ export function Menu(props: MenuProps) {
       showMenu.value = !showMenu.value;
     };
 
-    toggleRef.current?.addEventListener("click", clickHandler);
+    console.log(toggleRef);
+
+    toggleRef?.current?.addEventListener("click", clickHandler);
 
     return () => toggleRef.current?.removeEventListener("click", clickHandler);
   };
