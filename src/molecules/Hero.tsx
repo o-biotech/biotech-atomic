@@ -30,11 +30,22 @@ export function Hero(props: HeroProps) {
     ? <p class="text-xl max-w-lg text-blue-100">{props.callToAction}</p>
     : props.callToAction as ComponentChildren;
 
+  const heroStyle = props.heroStyle ||
+    (HeroStyleTypes.Rounded | HeroStyleTypes.Inset);
+
   return (
     <div
       class={classSet(
         props,
-        "w-full flex px-8 h-96 justify-center items-center flex-col gap-8 bg-cover bg-center bg-no-repeat bg-gray-100 rounded-xl text-white",
+        "w-full flex px-8 h-96 justify-center items-center flex-col gap-8 bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
+        (heroStyle & HeroStyleTypes.Inset) ===
+            HeroStyleTypes.Inset
+          ? "m-4"
+          : undefined,
+        (heroStyle & HeroStyleTypes.Rounded) ===
+            HeroStyleTypes.Rounded
+          ? "rounded-2xl"
+          : undefined,
       )}
       style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('/gallery/hero-bg.webp');"
     >
@@ -43,10 +54,21 @@ export function Hero(props: HeroProps) {
           <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
         )}
 
-        {callToAction}
-      </div>
+        <div
+          class={classSet(
+            undefined,
+            "flex",
+            (heroStyle & HeroStyleTypes.Horizonal) ===
+                HeroStyleTypes.Horizonal
+              ? "flex-row"
+              : "flex-column",
+          )}
+        >
+          {callToAction}
 
-      <ActionGroup>{props.children}</ActionGroup>
+          <ActionGroup>{props.children}</ActionGroup>
+        </div>
+      </div>
     </div>
   );
 }
