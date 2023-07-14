@@ -33,7 +33,7 @@ export function Menu(props: MenuProps) {
     <div class="relative">
       <button
         type="button"
-        onClick={toggleMenu}
+        onClick={() => toggleMenu()}
         class="flex items-center p-2 rounded"
       >
         <img src="profile-icon.svg" class="h-8 w-8 rounded-full" />
