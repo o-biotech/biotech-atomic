@@ -1,4 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
+import { Signal } from "preact/signals";
 import {
   Action,
   ActionProps,
@@ -22,7 +23,7 @@ export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
 export function Menu(props: MenuProps) {
   const { nav, navActions } = useActionChildren(props.children);
 
-  let showMenu = false;
+  let showMenu = useSignal(false);
 
   const toggleMenu = () => {
     showMenu = !showMenu;
