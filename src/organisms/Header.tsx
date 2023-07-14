@@ -7,6 +7,7 @@ import {
   ActionStyleTypes,
 } from "../atoms/Action.tsx";
 import { ActionGroup } from "../molecules/ActionGroup.tsx";
+import { classSet } from "../utils/jsx.tsx";
 
 export class HeaderLogo {
   public LogoAlt?: string;
@@ -59,10 +60,10 @@ export function Header(props: HeaderProps) {
   return (
     <header
       {...props}
-      class={[
-        "bg-blue-500 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3",
-        props.class || props.className,
-      ].filter((c) => c).join(" ")}
+      class={classSet(
+        props,
+        "bg-blue-500 sm:(flex justify-between items-center px-4 py-3)",
+      )}
     >
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>

@@ -1,4 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
+import { classSet } from "../utils/jsx.tsx";
 
 export enum ActionStyleTypes {
   Solid = 1 << 0,
@@ -40,7 +41,8 @@ export function Action(
 
   const shared = (
     <div
-      class={[
+      class={classSet(
+        props,
         "block px-4 py-2 font-bold",
         "transition-colors duration-200 ease-out",
         (actionStyle & ActionStyleTypes.Rounded) ===
@@ -58,8 +60,7 @@ export function Action(
             ActionStyleTypes.Outline
           ? "border-blue-700 border-solid border hover:border-blue-900"
           : "border-none",
-        props.class || props.className,
-      ].filter((c) => c).join(" ")}
+      )}
     >
     </div>
   );

@@ -1,5 +1,6 @@
 import { JSX } from "preact";
 import { Signal } from "@preact/signals";
+import { classSet } from "../../utils/jsx.tsx";
 
 export enum IconStyleTypes {
   Outline = 1 << 0,
@@ -39,8 +40,7 @@ export function useIconsRoot(props: IconProps) {
       import(iconUrl).then((s: JSX.HTMLAttributes<SVGElement>) => {
         console.log(s);
 
-        s.class = [s.class, props.class || props.className].filter((c) => c)
-          .join(" ");
+        s.class = classSet(props, s.class?.toString());
 
         icon.value = s;
       })

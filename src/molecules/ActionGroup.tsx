@@ -5,6 +5,7 @@ import {
   ActionStyleTypes,
   useActionChildren,
 } from "../atoms/Action.tsx";
+import { classSet } from "../utils/jsx.tsx";
 
 export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
   actionStyle?: ActionStyleTypes;
@@ -18,8 +19,7 @@ export function ActionGroup(props: ActionGroupProps) {
   return (
     <nav
       {...props}
-      class={["px-2 pt-2 pb-4 sm:flex sm:p-0", props.class].filter((c) => c)
-        .join(" ")}
+      class={classSet(props, "px-2 pt-2 pb-4 sm:flex sm:p-0")}
     >
       {nav ||
         navActions?.map((action) => (

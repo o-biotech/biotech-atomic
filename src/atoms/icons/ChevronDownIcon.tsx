@@ -1,6 +1,7 @@
 import { JSX } from "preact";
 import { useEffect } from "preact/hooks";
 import { IconProps, IconStyleTypes, useIconsRoot } from "./Icon.tsx";
+import { classSet } from "../../utils/jsx.tsx";
 
 // export const UserIconName = "user";
 
@@ -25,10 +26,10 @@ export function ChevronDownIcon(
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class={[
+      class={classSet(
+        props,
         props.iconStyle === IconStyleTypes.Mini ? "w-5 h-5" : "w-6 h-6",
-        props.class || props.className,
-      ].filter((c) => c).join(" ")}
+      )}
     >
       {props.iconStyle === IconStyleTypes.Outline && (
         <path

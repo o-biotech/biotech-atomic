@@ -1,6 +1,7 @@
 import { ComponentChildren, JSX } from "preact";
 import { Action, ActionProps, ActionStyleTypes } from "../atoms/Action.tsx";
 import { ActionGroup } from "../molecules/ActionGroup.tsx";
+import { classSet } from "../utils/jsx.tsx";
 
 export interface FooterProps extends JSX.HTMLAttributes<HTMLElement> {
   companyDescription?: string;
@@ -14,9 +15,7 @@ export function Footer(props: FooterProps) {
   return (
     <footer
       {...props}
-      class={["bg-gray-900 text-white", props.class || props.className].filter((
-        c,
-      ) => c).join(" ")}
+      class={classSet(props, "bg-gray-900 text-white")}
     >
       <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="md:flex justify-between">
