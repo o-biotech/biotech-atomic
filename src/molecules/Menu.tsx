@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { Ref, useEffect, useRef } from "preact/hooks";
+import { useRef, useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import {
   Action,
@@ -28,9 +28,9 @@ export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
 export function Menu(props: MenuProps) {
   const { nav, navActions } = useActionChildren(props.children);
 
-  const showMenu = useSignal(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const toggleRef = useRef<HTMLButtonElement>(null);
+  // const toggleRef = useRef<HTMLButtonElement>(null);
 
   // const ToggleMenu = () => {
   //   const clickHandler = (event: MouseEvent | TouchEvent) => {
@@ -49,8 +49,7 @@ export function Menu(props: MenuProps) {
   return (
     <div class="relative">
       <Action
-        ref={toggleRef}
-        onClick={() => alert("Toggle")}
+        onClick={() => setShowMenu(!showMenu)}
         class="flex items-center p-2 rounded"
       >
         {props.toggleChildren || (
