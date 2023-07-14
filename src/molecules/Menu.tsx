@@ -30,7 +30,7 @@ export function Menu(props: MenuProps) {
   const [showMenu, setShowMenu] = useState(false);
 
   const menuCloseCheck = (eTarget: HTMLDivElement) => {
-    setShowMenu(!!eTarget!.closest(".menu-wrapper"));
+    setShowMenu(showMenu && !!eTarget!.closest(".menu-wrapper"));
   };
 
   const outsideClickHandler = () => {
