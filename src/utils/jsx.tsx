@@ -1,4 +1,4 @@
-export function factory<T extends { new (...args: any[]): {} }>(
+export function factory<T extends { new (...args: object[]): {} }>(
   type: T,
   data?: InstanceType<T>,
 ): InstanceType<T> {
