@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { Signal } from "preact/signals";
+import { Signal } from "@preact/signals";
 import {
   Action,
   ActionProps,
