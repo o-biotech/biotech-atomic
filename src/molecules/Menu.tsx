@@ -1,4 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
+import { useEffect } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import {
   Action,
@@ -9,7 +10,6 @@ import {
 import { ActionGroup } from "./ActionGroup.tsx";
 import { ChevronDownIcon } from "../atoms/icons/ChevronDownIcon.tsx";
 import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
-import { useEffect } from "https://esm.sh/v128/preact@10.16.0/hooks/src/index.js";
 
 export enum MenuStyleTypes {
   Popover = 1 << 0,
