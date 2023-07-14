@@ -45,7 +45,7 @@ export function Hero(props: HeroProps) {
         "bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
         (heroStyle & HeroStyleTypes.Rounded) ===
             HeroStyleTypes.Rounded
-          ? "rounded-2xl"
+          ? "rounded-3xl"
           : undefined,
       )}
       style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('/gallery/hero-bg.webp');"
