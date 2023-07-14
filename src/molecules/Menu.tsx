@@ -33,7 +33,7 @@ export function Menu(props: MenuProps) {
   return (
     <div
       class="relative"
-      onClick={(e) => setShowMenu(!e.currentTarget!.closest(".menu-wrapper"))}
+      onClick={(e) => setShowMenu(e.currentTarget!.closest(".menu-wrapper"))}
     >
       <Action
         onClick={() => setShowMenu(!showMenu)}
