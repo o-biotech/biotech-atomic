@@ -1,5 +1,5 @@
 import { ComponentChildren, JSX } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import {
   Action,
@@ -30,18 +30,24 @@ export function Menu(props: MenuProps) {
 
   const showMenu = useSignal(false);
 
-  const toggleMenu = () => {
-    useEffect(() => {
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  const ToggleMenu = () => {
+    const clickHandler = (event: MouseEvent | TouchEvent) => {
       showMenu.value = !showMenu.value;
-    });
+    };
+
+    toggleRef.current?.addEventListener("click", clickHandler);
+
+    return () => toggleRef.current?.removeEventListener("click", clickHandler);
   };
+
+  useEffect(ToggleMenu, []);
 
   return (
     <div class="relative">
       <Action
-        onClick={() => {
-          toggleMenu();
-        }}
+        ref={toggleRef}
         class="flex items-center p-2 rounded"
       >
         {props.toggleChildren || (
