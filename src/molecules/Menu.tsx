@@ -7,6 +7,8 @@ import {
   useActionChildren,
 } from "../atoms/Action.tsx";
 import { ActionGroup } from "./ActionGroup.tsx";
+import { ChevronDownIcon } from "../atoms/icons/ChevronDownIcon.tsx";
+import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
 
 export enum MenuStyleTypes {
   Popover = 1 << 0,
@@ -15,43 +17,34 @@ export enum MenuStyleTypes {
 }
 
 export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
+  children?: ComponentChildren | Array<ActionProps>;
+
+  icon: ComponentChildren;
+
   menuStyle?: MenuStyleTypes;
 
-  children?: ComponentChildren | Array<ActionProps>;
+  toggleChildren?: ComponentChildren;
 }
 
 export function Menu(props: MenuProps) {
   const { nav, navActions } = useActionChildren(props.children);
 
-  let showMenu = useSignal(false);
+  const showMenu = useSignal(false);
 
   const toggleMenu = () => {
-    showMenu = !showMenu;
+    showMenu.value = !showMenu;
   };
 
   return (
     <div class="relative">
-      <button
-        type="button"
+      <Action
         onClick={() => toggleMenu()}
         class="flex items-center p-2 rounded"
       >
-        <img src="profile-icon.svg" class="h-8 w-8 rounded-full" />
-
-        <svg
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          stroke="currentColor"
-          stroke-width="2"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="ml-2"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
+        {props.toggleChildren || (
+          <ChevronDownIcon iconStyle={IconStyleTypes.Outline} />
+        )}
+      </Action>
 
       {showMenu && (
         <div
