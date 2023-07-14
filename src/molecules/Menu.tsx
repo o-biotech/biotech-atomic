@@ -36,7 +36,7 @@ export function Menu(props: MenuProps) {
 
   return (
     <div
-      class="relative"
+      class="relative menu-wrapper"
       onClick={menuCloseCheck}
     >
       <Action
@@ -49,7 +49,7 @@ export function Menu(props: MenuProps) {
       </Action>
 
       {showMenu && (
-        <div class="menu-wrapper">
+        <div>
           <div
             class={[
               "bg-white shadow-md",
