@@ -28,7 +28,7 @@ export function useIconsRoot(props: IconProps) {
         ? "outline"
         : "solid";
 
-      let icon: Signal<JSX.HTMLAttributes<SVGElement>> = new Signal<
+      const icon: Signal<JSX.HTMLAttributes<SVGElement>> = new Signal<
         JSX.HTMLAttributes<SVGElement>
       >();
 
@@ -36,7 +36,7 @@ export function useIconsRoot(props: IconProps) {
 
       console.log(iconUrl);
 
-      import(iconUrl).then((s: any) => {
+      import(iconUrl).then((s: JSX.HTMLAttributes<SVGElement>) => {
         console.log(s);
 
         s.class = [s.class, props.class || props.className].filter((c) => c)
