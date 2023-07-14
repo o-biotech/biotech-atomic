@@ -37,11 +37,12 @@ export function Hero(props: HeroProps) {
     <div
       class={classSet(
         props,
-        "w-full flex px-8 h-96 justify-center items-center flex-col gap-8 bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
+        "flex justify-center items-center flex-col px-8 h-96 gap-8",
         (heroStyle & HeroStyleTypes.Inset) ===
             HeroStyleTypes.Inset
-          ? "m-4"
-          : undefined,
+          ? "w-full"
+          : "md:w-[80%] sm:[90%]",
+        "bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
         (heroStyle & HeroStyleTypes.Rounded) ===
             HeroStyleTypes.Rounded
           ? "rounded-2xl"
