@@ -32,7 +32,7 @@ export function Menu(props: MenuProps) {
   const showMenu = useSignal(false);
 
   const toggleMenu = () => {
-    showMenu.value = !showMenu;
+    showMenu.value = !showMenu.value;
   };
 
   return (
