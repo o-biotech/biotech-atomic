@@ -49,7 +49,7 @@ export function Menu(props: MenuProps) {
               ? "absolute right-0 mt-2"
               : null,
             props.menuStyle === MenuStyleTypes.Slideout
-              ? "fixed top-0 bottom-0 left-0 z-50"
+              ? "fixed top-0 bottom-0 left-0 z-50 w-[80%]"
               : null,
             props.menuStyle === MenuStyleTypes.Responsive
               ? "fixed top-0 bottom-0 left-0 z-50 md:absolute md:right-0 md:mt-2 md:top-auto md:bottom-auto md:left-auto"
