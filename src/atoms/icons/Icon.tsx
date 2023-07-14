@@ -11,7 +11,7 @@ export interface IconProps extends JSX.HTMLAttributes<SVGElement> {
   iconStyle?: IconStyleTypes;
 }
 
-export let IconsRoot: Signal<string> = new Signal<string>(
+export const IconsRoot: Signal<string> = new Signal<string>(
   "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/src/", //24/solid/academic-cap.svg
 );
 
