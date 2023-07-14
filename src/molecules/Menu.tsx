@@ -18,7 +18,7 @@ export enum MenuStyleTypes {
 }
 
 export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
-  children?: ComponentChildren | Array<ActionProps>;
+  children?: ComponentChildren[] | Array<ActionProps>;
 
   menuStyle?: MenuStyleTypes;
 
