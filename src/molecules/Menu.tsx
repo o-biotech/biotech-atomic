@@ -30,10 +30,14 @@ export function Menu(props: MenuProps) {
 
   const [showMenu, setShowMenu] = useState(false);
 
+  const menuCloseCheck = (e: JSX.TargetedMouseEvent<HTMLDivElement>) => {
+    showMenu && setShowMenu(!!e.currentTarget!.closest(".menu-wrapper"));
+  };
+
   return (
     <div
       class="relative"
-      onClick={(e) => setShowMenu(!!e.currentTarget!.closest(".menu-wrapper"))}
+      onClick={menuCloseCheck}
     >
       <Action
         onClick={() => setShowMenu(!showMenu)}
