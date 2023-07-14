@@ -41,7 +41,7 @@ export function Menu(props: MenuProps) {
 
     toggleRef?.current?.addEventListener("click", clickHandler);
 
-    return () => toggleRef.current?.removeEventListener("click", clickHandler);
+    return () => toggleRef?.current?.removeEventListener("click", clickHandler);
   };
 
   useEffect(ToggleMenu, []);
