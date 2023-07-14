@@ -36,7 +36,9 @@ export function Menu(props: MenuProps) {
   return (
     <div class="relative">
       <Action
-        onClick={() => toggleMenu()}
+        onClick={() => {
+          toggleMenu();
+        }}
         class="flex items-center p-2 rounded"
       >
         {props.toggleChildren || (
