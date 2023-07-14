@@ -58,7 +58,7 @@ export function Action(
             ActionStyleTypes.Outline
           ? "border-blue-700 border-solid border hover:border-blue-900"
           : "border-none",
-        props.class || "",
+        props.class || props.className,
       ].filter((c) => c).join(" ")}
     >
     </div>
