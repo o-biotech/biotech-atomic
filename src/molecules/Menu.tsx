@@ -53,7 +53,7 @@ export function Menu(props: MenuProps) {
   return (
     <div
       class="relative menu-wrapper"
-      onClick={menuCloseCheck}
+      onClick={(e) => menuCloseCheck(e.currentTarget)}
     >
       <Action
         onClick={() => setShowMenu(!showMenu)}
