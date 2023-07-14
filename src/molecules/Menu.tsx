@@ -51,10 +51,7 @@ export function Menu(props: MenuProps) {
   useEffect(outsideClickHandler, []);
 
   return (
-    <div
-      class="relative menu-wrapper"
-      onClick={(e) => menuCloseCheck(e.currentTarget)}
-    >
+    <div class="relative menu-wrapper">
       <Action
         onClick={() => setShowMenu(!showMenu)}
         class="flex items-center p-2 rounded"
