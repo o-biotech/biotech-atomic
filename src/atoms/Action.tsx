@@ -41,15 +41,15 @@ export function Action(
   const shared = (
     <div
       class={[
-        "block px-4 py-2 font-bold text-white",
+        "block px-4 py-2 font-bold",
         "transition-colors duration-200 ease-out",
         (actionStyle & ActionStyleTypes.Rounded) ===
             ActionStyleTypes.Rounded
           ? "rounded"
           : "",
         (actionStyle & ActionStyleTypes.Solid) === ActionStyleTypes.Solid
-          ? "bg-blue-500"
-          : "",
+          ? "bg-blue-500 text-white"
+          : "text-black",
         (actionStyle & ActionStyleTypes.Link) ===
             ActionStyleTypes.Link
           ? "hover:bg-blue-700 hover:bg-opacity-80"
