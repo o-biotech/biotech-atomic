@@ -6,7 +6,8 @@ export enum DisplayStyleTypes {
   Top = 1 << 0,
   Center = 1 << 1,
   Bottom = 1 << 2,
-  None = 1 << 3,
+  Large = 1 << 3,
+  None = 1 << 4,
 }
 
 export type DisplayProps = JSX.HTMLAttributes<HTMLDivElement> & {
@@ -61,7 +62,18 @@ export function Display(props: DisplayProps) {
       )}
     >
       {props.title && (
-        <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
+        <h1
+          class={classSet(
+            undefined,
+            "font-bold",
+            (displayStyle & DisplayStyleTypes.Large) ===
+                DisplayStyleTypes.Large
+              ? "text-3xl md:text-4xl inline-block"
+              : "text-2xl md:text-3xl inline-block",
+          )}
+        >
+          {props.title}
+        </h1>
       )}
 
       {props.children}
