@@ -18,10 +18,18 @@ export function Features(props: FeaturesProps) {
       {...props}
       class={classSet(
         props,
-        "flex flex-col gap-16 justify-center md:(flex-row gap-8)",
+        "flex flex-col gap-8 justify-center",
       )}
     >
-      {displayElement}
+      <div
+        {...props}
+        class={classSet(
+          props,
+          "flex flex-col gap-16 justify-center md:(flex-row gap-8)",
+        )}
+      >
+        {displayElement}
+      </div>
 
       {props.callToAction}
     </div>
