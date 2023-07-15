@@ -54,7 +54,7 @@ export function Action(
           : "text-black",
         (actionStyle & ActionStyleTypes.Link) ===
             ActionStyleTypes.Link
-          ? "hover:bg-blue-700 hover:bg-opacity-80"
+          ? "hover:(bg-blue-700 bg-opacity-80 text-white)"
           : "",
         (actionStyle & ActionStyleTypes.Outline) ===
             ActionStyleTypes.Outline
