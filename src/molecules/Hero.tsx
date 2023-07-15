@@ -61,7 +61,7 @@ export function Hero(props: HeroProps) {
             "flex",
             (heroStyle & HeroStyleTypes.Horizonal) ===
                 HeroStyleTypes.Horizonal
-              ? "flex-col md:(flex-col [&>*]:mx-auto)"
+              ? "flex-col [&>*]:mx-auto md:flex-row"
               : "flex-col [&>*]:mx-auto",
           )}
         >
