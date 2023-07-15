@@ -12,7 +12,10 @@ export function Features(props: FeaturesProps) {
   return (
     <div
       {...props}
-      class={classSet(props, "flex flex-row gap-2 justify-center")}
+      class={classSet(
+        props,
+        "flex flex-col gap-8 justify-center md:(flex-row)",
+      )}
     >
       {displayElement}
     </div>
