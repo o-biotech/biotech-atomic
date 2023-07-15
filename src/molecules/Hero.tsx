@@ -43,12 +43,12 @@ export function Hero(props: HeroProps) {
           ? "w-[80%] my-8 mx-auto md:(w-[90%] my-6) sm:(w-[95%] my-4) xs:(w-[98%] max-w-[98%] my-2)"
           : "w-full",
         "bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
+        "bg-[linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('https://fresh.deno.dev/gallery/hero-bg.webp')]",
         (heroStyle & HeroStyleTypes.Rounded) ===
             HeroStyleTypes.Rounded
           ? "rounded-3xl"
           : undefined,
       )}
-      style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('https://fresh.deno.dev/gallery/hero-bg.webp');"
     >
       {props.title && (
         <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
