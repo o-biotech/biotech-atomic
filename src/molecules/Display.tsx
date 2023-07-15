@@ -28,15 +28,15 @@ export function Display(props: DisplayProps) {
         "flex flex-col",
         (displayStyle & DisplayStyleTypes.Center) ===
             DisplayStyleTypes.Center
-          ? "justify-center items-center text-center"
+          ? "justify-center items-center"
           : undefined,
         (displayStyle & DisplayStyleTypes.Top) ===
             DisplayStyleTypes.Top
-          ? "justify-start items-start text-left"
+          ? "justify-start items-start"
           : undefined,
         (displayStyle & DisplayStyleTypes.Bottom) ===
             DisplayStyleTypes.Bottom
-          ? "justify-end items-end text-right"
+          ? "justify-end items-end"
           : undefined,
       )}
     >
