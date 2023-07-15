@@ -12,7 +12,7 @@ export enum HeroStyleTypes {
   Rounded = 1 << 0,
   Inset = 1 << 1,
   Horizonal = 1 << 2,
-  All = ~0 << 3,
+  None = 1 << 3,
 }
 
 export interface HeroProps extends JSX.HTMLAttributes<HTMLElement> {
