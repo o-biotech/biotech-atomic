@@ -29,7 +29,7 @@ describe("Features Tests", () => {
         ]}
       </Features>,
     );
-    console.log(html);
+
     assert(html.includes("Fathym CLI"));
     assert(html.includes("Fathym UI"));
     assert(html.includes("Thinky AI"));

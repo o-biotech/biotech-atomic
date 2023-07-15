@@ -26,19 +26,13 @@ export function useDisplayChildren(
     ? undefined
     : children as ComponentChildren;
 
-  console.log(display);
-
   const displayDetails = children instanceof Array<DisplayProps>
     ? children as Array<DisplayProps>
     : undefined;
 
-  console.log(displayDetails);
-
   const displayElement = display || (
     <>{displayDetails?.map((dd) => <Display {...dd} />)}</>
   );
-
-  console.log(displayElement);
 
   return { display, displayDetails, displayElement };
 }
