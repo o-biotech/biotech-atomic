@@ -40,7 +40,7 @@ export function Hero(props: HeroProps) {
         "flex justify-center items-center flex-col px-8 h-96 gap-8",
         (heroStyle & HeroStyleTypes.Inset) ===
             HeroStyleTypes.Inset
-          ? "w-[80%] my-8 mx-auto md:(w-[90%] my-6) sm:(w-[95%] my-4) xs:(w-[98%] max-w-[98%])"
+          ? "w-[80%] my-8 mx-auto md:(w-[90%] my-6) sm:(w-[95%] my-4) xs:(w-[98%] max-w-[98%] my-2)"
           : "w-full",
         "bg-cover bg-center bg-no-repeat bg-gray-100 text-white",
         (heroStyle & HeroStyleTypes.Rounded) ===
