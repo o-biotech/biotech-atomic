@@ -78,7 +78,7 @@ export function Display(props: DisplayProps) {
           : undefined,
       )}
     >
-      {props.title}
+      {displayTitle}
 
       {props.children}
     </div>
