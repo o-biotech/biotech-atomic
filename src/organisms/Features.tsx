@@ -22,7 +22,6 @@ export function Features(props: FeaturesProps) {
       )}
     >
       <div
-        {...props}
         class={classSet(
           props,
           "flex flex-col gap-16 justify-center md:(flex-row gap-8)",
