@@ -58,11 +58,11 @@ export function Hero(props: HeroProps) {
         <div
           class={classSet(
             undefined,
-            "flex mx-auto",
+            "flex",
             (heroStyle & HeroStyleTypes.Horizonal) ===
                 HeroStyleTypes.Horizonal
-              ? "flex-row sm:flex-col"
-              : "flex-col",
+              ? "flex-row sm:(flex-col [&>*]:mx-auto)"
+              : "flex-col [&>*]:mx-auto",
           )}
         >
           {callToAction}
