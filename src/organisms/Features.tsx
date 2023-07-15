@@ -10,7 +10,7 @@ export function Features(props: FeaturesProps) {
   const { displayElement } = useDisplayChildren(props.children);
 
   return (
-    <div {...props} class={classSet(props, "flex flex-row gap-2")}>
+    <div {...props} class={classSet(props, "flex flex-row gap-2 mx-auto")}>
       {displayElement}
     </div>
   );
