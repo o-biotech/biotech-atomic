@@ -3,9 +3,9 @@ import { ActionGroup } from "./ActionGroup.tsx";
 import { classSet } from "../utils/jsx.tsx";
 
 export enum DisplayStyleTypes {
-  Left = 1 << 0,
+  Top = 1 << 0,
   Center = 1 << 1,
-  Right = 1 << 2,
+  Bottom = 1 << 2,
   None = 1 << 3,
 }
 
@@ -25,18 +25,18 @@ export function Display(props: DisplayProps) {
       {...props}
       class={classSet(
         props,
-        "flex",
+        "flex flex-col",
         (displayStyle & DisplayStyleTypes.Center) ===
             DisplayStyleTypes.Center
           ? "justify-center items-center text-center"
           : undefined,
-        (displayStyle & DisplayStyleTypes.Left) ===
-            DisplayStyleTypes.Left
-          ? "justify-normal items-start text-left"
+        (displayStyle & DisplayStyleTypes.Top) ===
+            DisplayStyleTypes.Top
+          ? "justify-start items-start text-left"
           : undefined,
-        (displayStyle & DisplayStyleTypes.Right) ===
-            DisplayStyleTypes.Right
-          ? "justify-normal items-end text-right"
+        (displayStyle & DisplayStyleTypes.Bottom) ===
+            DisplayStyleTypes.Bottom
+          ? "justify-end items-end text-right"
           : undefined,
       )}
     >
