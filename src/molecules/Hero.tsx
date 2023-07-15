@@ -48,7 +48,7 @@ export function Hero(props: HeroProps) {
           ? "rounded-3xl"
           : undefined,
       )}
-      style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('/gallery/hero-bg.webp');"
+      style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('https://fresh.deno.dev/gallery/hero-bg.webp');"
     >
       {props.title && (
         <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
