@@ -61,8 +61,8 @@ export function Hero(props: HeroProps) {
             "flex",
             (heroStyle & HeroStyleTypes.Horizonal) ===
                 HeroStyleTypes.Horizonal
-              ? "flex-row sm:flex-column"
-              : "flex-column",
+              ? "flex-row sm:flex-col"
+              : "flex-col",
           )}
         >
           <div class="flex-grow">
