@@ -44,17 +44,7 @@ export function Display(props: DisplayProps) {
         <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
       )}
 
-      <div
-        class={classSet(
-          undefined,
-          (displayStyle & DisplayStyleTypes.Center) ===
-              DisplayStyleTypes.Center
-            ? "mx-auto"
-            : undefined,
-        )}
-      >
-        {props.children}
-      </div>
+      {props.children}
     </div>
   );
 }
