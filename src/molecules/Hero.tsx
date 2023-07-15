@@ -50,25 +50,23 @@ export function Hero(props: HeroProps) {
       )}
       style="background-image:linear-gradient(rgba(0, 0, 40, 0.8),rgba(0, 0, 40, 0.8)), url('/gallery/hero-bg.webp');"
     >
-      <div class="space-y-4 text-center">
-        {props.title && (
-          <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
+      {props.title && (
+        <h1 class="text-4xl inline-block font-bold">{props.title}</h1>
+      )}
+
+      <div
+        class={classSet(
+          undefined,
+          "flex",
+          (heroStyle & HeroStyleTypes.Horizonal) ===
+              HeroStyleTypes.Horizonal
+            ? "flex-col [&>*]:mx-auto md:flex-row"
+            : "flex-col [&>*]:mx-auto",
         )}
+      >
+        {callToAction}
 
-        <div
-          class={classSet(
-            undefined,
-            "flex",
-            (heroStyle & HeroStyleTypes.Horizonal) ===
-                HeroStyleTypes.Horizonal
-              ? "flex-col [&>*]:mx-auto md:flex-row"
-              : "flex-col [&>*]:mx-auto",
-          )}
-        >
-          {callToAction}
-
-          <ActionGroup>{props.children}</ActionGroup>
-        </div>
+        <ActionGroup>{props.children}</ActionGroup>
       </div>
     </div>
   );
