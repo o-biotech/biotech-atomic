@@ -17,6 +17,28 @@ export interface DisplayProps extends JSX.HTMLAttributes<HTMLDivElement> {
   title?: string;
 }
 
+export function useDisplayChildren(
+  children: ComponentChildren | Array<DisplayProps>,
+): {
+  display: ComponentChildren;
+  displayDetails: Array<DisplayProps> | undefined;
+  displayElement: ComponentChildren;
+} {
+  const display = children instanceof Array<DisplayProps>
+    ? undefined
+    : children as ComponentChildren;
+
+  const displayDetails = children instanceof Array<DisplayProps>
+    ? children as Array<DisplayProps>
+    : undefined;
+
+  const displayElement = children || (
+    <>{displayDetails?.map((dd) => <Display {...dd} />)}</>
+  );
+
+  return { display, displayDetails, displayElement };
+}
+
 export function Display(props: DisplayProps) {
   const displayStyle = props.displayStyle || DisplayStyleTypes.None;
 

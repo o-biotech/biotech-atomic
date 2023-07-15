@@ -1,13 +1,8 @@
 import { ComponentChildren, JSX } from "preact";
-import {
-  Action,
-  ActionProps,
-  ActionStyleTypes,
-  useActionChildren,
-} from "../atoms/Action.tsx";
-import { ActionGroup } from "./ActionGroup.tsx";
+import { ActionProps } from "../atoms/Action.tsx";
+import { ActionGroup } from "../molecules/ActionGroup.tsx";
 import { classSet } from "../utils/jsx.tsx";
-import { Display, DisplayProps } from "./Display.tsx";
+import { Display, DisplayProps } from "../molecules/Display.tsx";
 
 export enum HeroStyleTypes {
   Rounded = 1 << 0,
