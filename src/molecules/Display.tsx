@@ -9,13 +9,11 @@ export enum DisplayStyleTypes {
   None = 1 << 3,
 }
 
-export interface DisplayProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  children?: ComponentChildren;
-
+export type DisplayProps = JSX.HTMLAttributes<HTMLDivElement> & {
   displayStyle?: DisplayStyleTypes;
 
   title?: string;
-}
+};
 
 export function useDisplayChildren(
   children: ComponentChildren | Array<DisplayProps>,
@@ -28,13 +26,19 @@ export function useDisplayChildren(
     ? undefined
     : children as ComponentChildren;
 
+  console.log(display);
+
   const displayDetails = children instanceof Array<DisplayProps>
     ? children as Array<DisplayProps>
     : undefined;
 
-  const displayElement = children || (
+  console.log(displayDetails);
+
+  const displayElement = display || (
     <>{displayDetails?.map((dd) => <Display {...dd} />)}</>
   );
+
+  console.log(displayElement);
 
   return { display, displayDetails, displayElement };
 }

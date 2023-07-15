@@ -35,11 +35,7 @@ export function useIconsRoot(props: IconProps) {
 
       const iconUrl = `${IconsRoot}${size}/${style}/${iconName}.svg`;
 
-      console.log(iconUrl);
-
       import(iconUrl).then((s: JSX.HTMLAttributes<SVGElement>) => {
-        console.log(s);
-
         s.class = classSet(props, s.class?.toString());
 
         icon.value = s;
