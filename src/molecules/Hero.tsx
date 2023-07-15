@@ -37,7 +37,7 @@ export function Hero(props: HeroProps) {
       {...props}
       title={props.title}
       class={classSet(
-        undefined,
+        props,
         "flex-col px-8 h-96 gap-8",
         (heroStyle & HeroStyleTypes.Inset) ===
             HeroStyleTypes.Inset
