@@ -35,7 +35,6 @@ export function Hero(props: HeroProps) {
   return (
     <Display
       {...props}
-      title={props.title}
       class={classSet(
         props,
         "flex-col px-8 h-96 gap-8",
