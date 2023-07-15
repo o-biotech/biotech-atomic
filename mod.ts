@@ -1,5 +1,4 @@
-export { Action } from "./src/atoms/Action.tsx";
-export * from "./src/atoms/icons/_exports.tsx";
+export * from "./src/atoms/_exports.tsx";
 export { ActionGroup } from "./src/molecules/ActionGroup.tsx";
 export { Menu } from "./src/molecules/Menu.tsx";
 export { Features } from "./src/organisms/Features.tsx";
