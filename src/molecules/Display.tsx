@@ -32,11 +32,11 @@ export function Display(props: DisplayProps) {
           : undefined,
         (displayStyle & DisplayStyleTypes.Left) ===
             DisplayStyleTypes.Left
-          ? "justify-start items-start text-left"
+          ? "justify-normal items-start text-left"
           : undefined,
         (displayStyle & DisplayStyleTypes.Right) ===
             DisplayStyleTypes.Right
-          ? "justify-end items-end text-right"
+          ? "justify-normal items-end text-right"
           : undefined,
       )}
     >
