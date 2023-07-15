@@ -12,7 +12,7 @@ export enum ActionStyleTypes {
 
 export function useActionChildren(
   children: ComponentChildren | Array<ActionProps>,
-): { nav: ComponentChildren; navActions: ActionProps[] | undefined } {
+): { nav: ComponentChildren; navActions: Array<ActionProps> | undefined } {
   const nav = children instanceof Array<ActionProps>
     ? undefined
     : children as ComponentChildren;
