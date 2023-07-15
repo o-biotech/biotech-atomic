@@ -65,9 +65,11 @@ export function Hero(props: HeroProps) {
               : "flex-column",
           )}
         >
-          {callToAction}
+          <div class="flex-grow">
+            {callToAction}
+          </div>
 
-          <ActionGroup>{props.children}</ActionGroup>
+          <ActionGroup class="flex-grow">{props.children}</ActionGroup>
         </div>
       </div>
     </div>
