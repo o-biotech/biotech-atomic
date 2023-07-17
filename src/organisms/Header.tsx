@@ -71,9 +71,36 @@ export function Header(props: HeaderProps) {
             menuStyle={MenuButtonStyleTypes.Popover}
             toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
           >
-            <ActionGroup>
+            <>
+              <Action
+                onClick={() => alert("Hey")}
+                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
+                class="w-full"
+              >
+                Contact
+              </Action>
+
+              <Action
+                onClick={() => alert("Hey")}
+                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
+                class="w-full"
+              >
+                Contact
+              </Action>
+
+              <Action
+                onClick={() => alert("Hey")}
+                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
+                class="w-full"
+              >
+                Contact
+              </Action>
+            </>
+            {
+              /* <ActionGroup>
               {props.nav}
-            </ActionGroup>
+            </ActionGroup> */
+            }
           </MenuButton>
 
           <ActionGroup class="hidden md:flex">
