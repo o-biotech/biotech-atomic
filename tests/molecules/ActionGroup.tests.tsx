@@ -60,6 +60,8 @@ describe("Action Group Tests", () => {
     assert(html.includes('href="/contact"'));
     assert(html.includes(">Contact<"));
     assert(html.includes("Contact"));
+    assert(!html.includes("hidden md:block"));
+    assert(!html.includes("md:hidden"));
   });
 
   describe("Actions Simple Responsive", () => {
