@@ -10,6 +10,7 @@ import { ActionGroup } from "../molecules/ActionGroup.tsx";
 import { classSet } from "../utils/jsx.tsx";
 import { MenuIcon } from "../atoms/icons/MenuIcon.tsx";
 import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
+import { MenuButton, MenuButtonStyleTypes } from "../molecules/MenuButton.tsx";
 
 export class HeaderLogo {
   public LogoAlt?: string;
@@ -61,6 +62,28 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
 export function Header(props: HeaderProps) {
   const { logo, logoAction } = useHeaderLogoChildren(props.logo);
 
+  const loadActions = () => {
+    const actions = (
+      <ActionGroup>
+        {props.nav}
+      </ActionGroup>
+    );
+
+    if (props.responsiveNav) {
+      return (
+        <MenuButton
+          class="md:hidden"
+          menuStyle={MenuButtonStyleTypes.Responsive}
+          toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
+        >
+          <>{actions}</>
+        </MenuButton>
+      );
+    } else {
+      return actions;
+    }
+  };
+
   return (
     <header
       {...props}
@@ -73,12 +96,7 @@ export function Header(props: HeaderProps) {
         {logo || logoAction}
       </div>
 
-      <ActionGroup
-        responsive={props.responsiveNav}
-        toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
-      >
-        {props.nav}
-      </ActionGroup>
+      {loadActions()}
     </header>
   );
 }
