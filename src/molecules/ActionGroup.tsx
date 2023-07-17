@@ -37,7 +37,7 @@ export function ActionGroup(props: ActionGroupProps) {
 
   if (props.responsive) {
     render = (
-      <span>
+      <>
         <MenuButton
           class="md:hidden"
           menuStyle={MenuButtonStyleTypes.Responsive}
@@ -51,12 +51,12 @@ export function ActionGroup(props: ActionGroupProps) {
           class={classSet(
             props,
             "px-2 pt-2 pb-4 flex",
-            props.responsive ? "hidden md:block" : "",
+            "hidden md:block",
           )}
         >
           {children}
         </nav>
-      </span>
+      </>
     );
   }
 
