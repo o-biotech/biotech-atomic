@@ -63,24 +63,30 @@ export function Header(props: HeaderProps) {
   const { logo, logoAction } = useHeaderLogoChildren(props.logo);
 
   const loadActions = () => {
-    const actions = (
-      <ActionGroup>
-        {props.nav}
-      </ActionGroup>
-    );
-
     if (props.responsiveNav) {
       return (
-        <MenuButton
-          class="md:hidden"
-          menuStyle={MenuButtonStyleTypes.Responsive}
-          toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
-        >
-          <>{actions}</>
-        </MenuButton>
+        <>
+          <MenuButton
+            class="md:hidden"
+            menuStyle={MenuButtonStyleTypes.Responsive}
+            toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
+          >
+            <ActionGroup>
+              {props.nav}
+            </ActionGroup>
+          </MenuButton>
+
+          <ActionGroup class="hidden md:flex">
+            {props.nav}
+          </ActionGroup>
+        </>
       );
     } else {
-      return actions;
+      return (
+        <ActionGroup>
+          {props.nav}
+        </ActionGroup>
+      );
     }
   };
 
