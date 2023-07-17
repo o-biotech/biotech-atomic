@@ -66,6 +66,7 @@ export function Header(props: HeaderProps) {
       {...props}
       class={classSet(
         props,
+        "flex flex-row",
       )}
     >
       <div class="px-4 py-3 sm:p-0">
