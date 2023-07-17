@@ -19,7 +19,7 @@ export function ActionGroup(props: ActionGroupProps) {
   return (
     <nav
       {...props}
-      class={classSet(props, "px-2 pt-2 pb-4 sm:flex sm:p-0")}
+      class={classSet(props, "px-2 pt-2 pb-4 flex sm:p-0")}
     >
       {nav ||
         navActions?.map((action) => (
