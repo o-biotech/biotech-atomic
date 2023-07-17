@@ -26,22 +26,39 @@ export function ActionGroup(props: ActionGroupProps) {
       <Action actionStyle={props.actionStyle} {...action} />
     ));
 
-  return (
+  let render = (
     <nav
       {...props}
       class={classSet(props, "px-2 pt-2 pb-4 flex")}
     >
-      {props.responsive && (
+      {children}
+    </nav>
+  );
+
+  if (props.responsive) {
+    render = (
+      <span>
         <MenuButton
-          class="hidden md:block"
+          class="md:hidden"
           menuStyle={MenuButtonStyleTypes.Responsive}
           toggleChildren={props.toggleChildren}
         >
           {children}
         </MenuButton>
-      )}
 
-      <span class={props.responsive ? "md:hidden" : ""}>{children}</span>
-    </nav>
-  );
+        <nav
+          {...props}
+          class={classSet(
+            props,
+            "px-2 pt-2 pb-4 flex",
+            props.responsive ? "hidden md:block" : "",
+          )}
+        >
+          {children}
+        </nav>
+      </span>
+    );
+  }
+
+  return render;
 }
