@@ -60,7 +60,7 @@ describe("Action Group Tests", () => {
     assert(html.includes('href="/contact"'));
     assert(html.includes(">Contact<"));
     assert(html.includes("Contact"));
-    assert(!html.includes("hidden md:block"));
+    assert(!html.includes("hidden md:flex"));
     assert(!html.includes("md:hidden"));
   });
 
@@ -87,7 +87,7 @@ describe("Action Group Tests", () => {
     assert(html.includes('href="/contact"'));
     assert(html.includes(">Contact<"));
     assert(html.includes("Contact"));
-    assert(html.includes("hidden md:block"));
+    assert(html.includes("hidden md:flex"));
     assert(html.includes("md:hidden"));
   });
 });

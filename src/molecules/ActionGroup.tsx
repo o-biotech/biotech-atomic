@@ -50,8 +50,7 @@ export function ActionGroup(props: ActionGroupProps) {
           {...props}
           class={classSet(
             props,
-            "px-2 pt-2 pb-4 flex",
-            "hidden md:block",
+            "px-2 pt-2 pb-4 hidden md:flex",
           )}
         >
           {children}
