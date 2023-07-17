@@ -21,7 +21,7 @@ export interface HeroProps extends DisplayProps {
 
 export function Hero(props: HeroProps) {
   const callToAction = typeof props.callToAction === "string"
-    ? <p class="text-xl max-w-lg text-blue-100">{props.callToAction}</p>
+    ? <p class="text-xl max-w-lg text-primary-100">{props.callToAction}</p>
     : props.callToAction as ComponentChildren;
 
   const heroStyle = props.heroStyle ||

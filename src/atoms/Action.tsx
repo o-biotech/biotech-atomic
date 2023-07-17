@@ -50,15 +50,15 @@ export function Action(
           ? "rounded"
           : "",
         (actionStyle & ActionStyleTypes.Solid) === ActionStyleTypes.Solid
-          ? "bg-blue-500 text-white"
+          ? "bg-primary-500 text-white"
           : "text-black",
         (actionStyle & ActionStyleTypes.Link) ===
             ActionStyleTypes.Link
-          ? "hover:(bg-blue-700 bg-opacity-80 text-white)"
+          ? "hover:(bg-primary-700 bg-opacity-80 text-white)"
           : "",
         (actionStyle & ActionStyleTypes.Outline) ===
             ActionStyleTypes.Outline
-          ? "border-blue-700 border-solid border hover:border-blue-900"
+          ? "border-primary-700 border-solid border hover:border-primary-900"
           : "border-none",
       )}
     >

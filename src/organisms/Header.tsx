@@ -62,7 +62,7 @@ export function Header(props: HeaderProps) {
       {...props}
       class={classSet(
         props,
-        "bg-blue-500 sm:(flex justify-between items-center px-4 py-3)",
+        "bg-primary-500 sm:(flex justify-between items-center px-4 py-3)",
       )}
     >
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
