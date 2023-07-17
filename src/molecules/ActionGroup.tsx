@@ -31,8 +31,9 @@ export function ActionGroup(props: ActionGroupProps) {
       <MenuButton
         menuStyle={MenuButtonStyleTypes.Responsive}
         toggleChildren={props.toggleChildren}
-        children={children}
-      />
+      >
+        {children}
+      </MenuButton>
     );
   }
 
