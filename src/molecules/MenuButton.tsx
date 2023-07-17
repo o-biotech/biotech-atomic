@@ -11,7 +11,7 @@ import { ChevronDownIcon } from "../atoms/icons/ChevronDownIcon.tsx";
 import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
 import { classSet } from "../utils/jsx.tsx";
 
-export enum MenuStyleTypes {
+export enum MenuButtonStyleTypes {
   Popover = 1 << 0,
   Slideout = 1 << 1,
   Responsive = 1 << 2,
@@ -20,7 +20,7 @@ export enum MenuStyleTypes {
 export interface MenuButtonProps extends JSX.HTMLAttributes<HTMLElement> {
   children?: ComponentChildren | Array<ActionProps>;
 
-  menuStyle?: MenuStyleTypes;
+  menuStyle?: MenuButtonStyleTypes;
 
   toggleChildren?: ComponentChildren;
 }
@@ -67,13 +67,13 @@ export function MenuButton(props: MenuButtonProps) {
           class={classSet(
             undefined,
             "bg-white shadow-md",
-            props.menuStyle === MenuStyleTypes.Popover
+            props.menuStyle === MenuButtonStyleTypes.Popover
               ? "absolute right-0 mt-2"
               : undefined,
-            props.menuStyle === MenuStyleTypes.Slideout
+            props.menuStyle === MenuButtonStyleTypes.Slideout
               ? "fixed top-0 bottom-0 left-0 z-50 w-[80%]"
               : undefined,
-            props.menuStyle === MenuStyleTypes.Responsive
+            props.menuStyle === MenuButtonStyleTypes.Responsive
               ? "fixed top-0 bottom-0 left-0 z-50 w-[80%] md:absolute md:right-0 md:mt-2 md:top-auto md:bottom-auto md:left-auto md:w-auto"
               : undefined,
           )}
