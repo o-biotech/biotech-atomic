@@ -68,7 +68,7 @@ export function Header(props: HeaderProps) {
         <>
           <MenuButton
             class="md:hidden"
-            menuStyle={MenuButtonStyleTypes.Responsive}
+            menuStyle={MenuButtonStyleTypes.Popover}
             toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
           >
             <ActionGroup>
