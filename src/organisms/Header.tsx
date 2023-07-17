@@ -8,6 +8,8 @@ import {
 } from "../atoms/Action.tsx";
 import { ActionGroup } from "../molecules/ActionGroup.tsx";
 import { classSet } from "../utils/jsx.tsx";
+import { MenuIcon } from "../atoms/icons/MenuIcon.tsx";
+import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
 
 export class HeaderLogo {
   public LogoAlt?: string;
@@ -52,6 +54,8 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
   nav?: ComponentChildren | Array<ActionProps>;
+
+  responsiveNav?: boolean;
 }
 
 export function Header(props: HeaderProps) {
@@ -84,7 +88,10 @@ export function Header(props: HeaderProps) {
         </div>
       </div>
 
-      <ActionGroup>
+      <ActionGroup
+        responsive={props.responsiveNav}
+        toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
+      >
         {props.nav}
       </ActionGroup>
     </header>
