@@ -17,7 +17,7 @@ export enum MenuStyleTypes {
   Responsive = 1 << 2,
 }
 
-export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
+export interface MenuButtonProps extends JSX.HTMLAttributes<HTMLElement> {
   children?: ComponentChildren | Array<ActionProps>;
 
   menuStyle?: MenuStyleTypes;
@@ -25,7 +25,7 @@ export interface MenuProps extends JSX.HTMLAttributes<HTMLElement> {
   toggleChildren?: ComponentChildren;
 }
 
-export function Menu(props: MenuProps) {
+export function MenuButton(props: MenuButtonProps) {
   const { nav, navActions } = useActionChildren(props.children);
 
   const [showMenu, setShowMenu] = useState(false);
