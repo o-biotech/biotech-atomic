@@ -21,28 +21,27 @@ export interface ActionGroupProps extends JSX.HTMLAttributes<HTMLElement> {
 export function ActionGroup(props: ActionGroupProps) {
   const { nav, navActions } = useActionChildren(props.children);
 
-  let children: ComponentChildren = nav ||
+  const children: ComponentChildren = nav ||
     navActions?.map((action) => (
       <Action actionStyle={props.actionStyle} {...action} />
     ));
-
-  if (props.responsive) {
-    children = (
-      <MenuButton
-        menuStyle={MenuButtonStyleTypes.Responsive}
-        toggleChildren={props.toggleChildren}
-      >
-        {children}
-      </MenuButton>
-    );
-  }
 
   return (
     <nav
       {...props}
       class={classSet(props, "px-2 pt-2 pb-4 flex")}
     >
-      {children}
+      {props.responsive && (
+        <MenuButton
+          class="hidden md:block"
+          menuStyle={MenuButtonStyleTypes.Responsive}
+          toggleChildren={props.toggleChildren}
+        >
+          {children}
+        </MenuButton>
+      )}
+
+      <span class={props.responsive ? "md:hidden" : ""}>{children}</span>
     </nav>
   );
 }
