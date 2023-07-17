@@ -61,4 +61,31 @@ describe("Action Group Tests", () => {
     assert(html.includes(">Contact<"));
     assert(html.includes("Contact"));
   });
+
+  describe("Actions Simple Responsive", () => {
+    const html = render(
+      <ActionGroup responsive>
+        {[{
+          class: "text-xl mx-1",
+          href: "/",
+          children: "Home",
+        }, {
+          class: "text-xl mx-1",
+          href: "/about",
+          children: "About",
+        }, {
+          class: "text-xl mx-1",
+          href: "/contact",
+          children: "Contact",
+        }]}
+      </ActionGroup>,
+    );
+
+    assert(html.includes('href="/"'));
+    assert(html.includes('href="/contact"'));
+    assert(html.includes(">Contact<"));
+    assert(html.includes("Contact"));
+    assert(html.includes("hidden md:block"));
+    assert(html.includes("md:hidden"));
+  });
 });
