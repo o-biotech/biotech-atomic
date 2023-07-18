@@ -20,13 +20,15 @@ export function Footer(props: FooterProps) {
       <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="md:flex justify-between">
           <div class="mb-4 md:mb-0">
-            <Action
-              href="/"
-              class="text-2xl uppercase tracking-widest"
-              actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
-            >
-              {props.companyName}
-            </Action>
+            {props.companyName && (
+              <Action
+                href="/"
+                class="text-2xl uppercase tracking-widest"
+                actionStyle={ActionStyleTypes.Link | ActionStyleTypes.Rounded}
+              >
+                {props.companyName}
+              </Action>
+            )}
 
             {props.companyDescription && (
               <p class="text-gray-400 mt-2">{props.companyDescription}</p>
