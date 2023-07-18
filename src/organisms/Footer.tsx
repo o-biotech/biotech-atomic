@@ -6,7 +6,7 @@ import { classSet } from "../utils/jsx.tsx";
 export interface FooterProps extends JSX.HTMLAttributes<HTMLElement> {
   companyDescription?: string;
 
-  companyName: string;
+  companyName?: string;
 
   nav?: ComponentChildren | Array<ActionProps>;
 }
