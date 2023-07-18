@@ -55,67 +55,10 @@ export interface HeaderProps extends JSX.HTMLAttributes<HTMLElement> {
   logo?: ComponentChildren | HeaderLogo;
 
   nav?: ComponentChildren | Array<ActionProps>;
-
-  responsiveNav?: boolean;
 }
 
 export function Header(props: HeaderProps) {
   const { logo, logoAction } = useHeaderLogoChildren(props.logo);
-
-  const loadActions = () => {
-    if (props.responsiveNav) {
-      return (
-        <>
-          <MenuButton
-            class="md:hidden"
-            menuStyle={MenuButtonStyleTypes.Popover}
-            toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
-          >
-            <>
-              <Action
-                onClick={() => alert("Hey")}
-                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
-                class="w-full"
-              >
-                Contact
-              </Action>
-
-              <Action
-                onClick={() => alert("Hey")}
-                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
-                class="w-full"
-              >
-                Contact
-              </Action>
-
-              <Action
-                onClick={() => alert("Hey")}
-                actionStyle={ActionStyleTypes.Outline | ActionStyleTypes.Solid}
-                class="w-full"
-              >
-                Contact
-              </Action>
-            </>
-            {
-              /* <ActionGroup>
-              {props.nav}
-            </ActionGroup> */
-            }
-          </MenuButton>
-
-          <ActionGroup class="hidden md:flex">
-            {props.nav}
-          </ActionGroup>
-        </>
-      );
-    } else {
-      return (
-        <ActionGroup>
-          {props.nav}
-        </ActionGroup>
-      );
-    }
-  };
 
   return (
     <header
@@ -129,7 +72,9 @@ export function Header(props: HeaderProps) {
         {logo || logoAction}
       </div>
 
-      {loadActions()}
+      <ActionGroup>
+        {props.nav}
+      </ActionGroup>
     </header>
   );
 }
