@@ -5,6 +5,8 @@ import { IconStyleTypes } from "../atoms/icons/Icon.tsx";
 import { classSet } from "../utils/jsx.tsx";
 
 export interface ResponsiveSetProps extends JSX.HTMLAttributes<HTMLElement> {
+  menuStyle?: MenuButtonStyleTypes;
+
   toggleChildren?: ComponentChildren;
 }
 
@@ -13,7 +15,7 @@ export function ResponsiveSet(props: ResponsiveSetProps) {
     <>
       <MenuButton
         class="md:hidden"
-        menuStyle={MenuButtonStyleTypes.Responsive}
+        menuStyle={props.menuStyle || MenuButtonStyleTypes.Responsive}
         toggleChildren={props.toggleChildren || (
           <MenuIcon iconStyle={IconStyleTypes.Outline} />
         )}
