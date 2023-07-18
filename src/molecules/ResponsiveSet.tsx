@@ -14,7 +14,9 @@ export function ResponsiveSet(props: ResponsiveSetProps) {
       <MenuButton
         class="md:hidden"
         menuStyle={MenuButtonStyleTypes.Responsive}
-        toggleChildren={<MenuIcon iconStyle={IconStyleTypes.Outline} />}
+        toggleChildren={props.toggleChildren || (
+          <MenuIcon iconStyle={IconStyleTypes.Outline} />
+        )}
       >
         {props.children}
       </MenuButton>
