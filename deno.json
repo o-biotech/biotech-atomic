@@ -13,6 +13,7 @@
     "jsxImportSource": "preact"
   },
   "imports": {
+    "$deepsignal": "https://esm.sh/deepsignal@1.3.4",
     "immer": "https://cdn.skypack.dev/immer@8.0.1?dts",
     "preact": "https://esm.sh/preact@10.16.0",
     "preact/": "https://esm.sh/preact@10.16.0/",

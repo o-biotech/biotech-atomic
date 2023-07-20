@@ -1,5 +1,5 @@
-import { DeepSignal, deepSignal } from "npm:deepsignal";
-import type { RevertDeepSignal } from "npm:deepsignal";
+import { DeepSignal, deepSignal } from "$deepsignal";
+import type { RevertDeepSignal } from "$deepsignal";
 import { EventEmitter } from "node:events";
 import { produce } from "immer";
 import { mergeDeep } from "../utils/object.utils.tsx";

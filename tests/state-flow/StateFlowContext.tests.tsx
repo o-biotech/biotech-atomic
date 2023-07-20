@@ -7,7 +7,7 @@ import {
   StateFlowContextService,
 } from "../../src/state-flow/StateFlowContext.tsx";
 import { assertEquals } from "$std/testing/asserts.ts";
-import { DeepSignal, deepSignal } from "npm:deepsignal";
+import { DeepSignal, deepSignal } from "$deepsignal";
 
 interface CountState extends StateFlow {
   count: number;
