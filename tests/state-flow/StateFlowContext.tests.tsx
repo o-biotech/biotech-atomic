@@ -2,17 +2,20 @@ import { assert, describe, render } from "../test_deps.ts";
 
 import { Action } from "../../src/atoms/Action.tsx";
 import { Header, HeaderLogo } from "../../src/organisms/Header.tsx";
-import { StateFlowContext } from "../../src/state-flow/StateFlowContext.tsx";
+import {
+  StateFlow,
+  StateFlowContext,
+} from "../../src/state-flow/StateFlowContext.tsx";
 import { assertEquals } from "$std/testing/asserts.ts";
 import { DeepSignal, deepSignal } from "npm:deepsignal";
 
-interface CountState {
+interface CountState extends StateFlow {
   count: number;
 
   get double(): number;
 }
 
-interface TestState {
+interface TestState extends StateFlow {
   FirstName: string;
 
   get FullName(): string;
@@ -26,9 +29,6 @@ class TestStateFlowContext extends StateFlowContext<TestState> {
   }
 
   public ChangeName(first: string, last: string): void {
-    // this.State.FirstName = first;
-
-    // this.State.LastName = last;
     this.$Draft((draft) => {
       draft.FirstName = first;
 

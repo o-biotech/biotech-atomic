@@ -4,8 +4,9 @@ import { EventEmitter } from "node:events";
 import { produce } from "immer";
 import { mergeDeep } from "../utils/object.utils.tsx";
 
-// deno-lint-ignore ban-types
-export class StateFlowContext<TState extends object> extends EventEmitter {
+export type StateFlow = Record<string | number | symbol, unknown>;
+
+export class StateFlowContext<TState extends StateFlow> extends EventEmitter {
   //# Fields
   //#
 
