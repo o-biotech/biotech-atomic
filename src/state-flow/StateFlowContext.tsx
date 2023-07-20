@@ -6,7 +6,8 @@ import { mergeDeep } from "../utils/object.utils.tsx";
 
 export type StateFlow = Record<string | number | symbol, unknown>;
 
-export class StateFlowContext<TState extends StateFlow> extends EventEmitter {
+export class StateFlowContextService<TState extends StateFlow>
+  extends EventEmitter {
   //# Fields
   //#
 

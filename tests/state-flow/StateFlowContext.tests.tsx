@@ -4,7 +4,7 @@ import { Action } from "../../src/atoms/Action.tsx";
 import { Header, HeaderLogo } from "../../src/organisms/Header.tsx";
 import {
   StateFlow,
-  StateFlowContext,
+  StateFlowContextService,
 } from "../../src/state-flow/StateFlowContext.tsx";
 import { assertEquals } from "$std/testing/asserts.ts";
 import { DeepSignal, deepSignal } from "npm:deepsignal";
@@ -23,7 +23,7 @@ interface TestState extends StateFlow {
   LastName: string;
 }
 
-class TestStateFlowContext extends StateFlowContext<TestState> {
+class TestStateFlowContextService extends StateFlowContextService<TestState> {
   constructor(initState: TestState) {
     super(initState);
   }
@@ -54,7 +54,7 @@ describe("StateFlowContext Tests", () => {
     // assertEquals(state.count, 1);
     // assertEquals(state.double, 2);
 
-    const testCtxt = new TestStateFlowContext({
+    const testCtxt = new TestStateFlowContextService({
       FirstName: "",
       LastName: "",
       get FullName(): string {
