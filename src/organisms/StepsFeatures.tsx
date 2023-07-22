@@ -80,9 +80,9 @@ export function StepsFeatures(props: StepsFeaturesProps) {
       {props.children?.map((childStep, i) => {
         const complete: boolean = props.step as number > i;
 
-        const title = typeof props.title === "string"
-          ? buildTitle(i + 1, "Connect to Azure", complete)
-          : props.title;
+        const title = typeof childStep.title === "string"
+          ? buildTitle(i + 1, childStep.title, complete)
+          : childStep.title;
 
         return {
           title: title,
