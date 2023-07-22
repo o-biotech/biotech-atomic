@@ -1,74 +1,93 @@
 import { assert, describe, render } from "../test_deps.ts";
-
-import { Action } from "../../src/atoms/Action.tsx";
-import { Header, HeaderLogo } from "../../src/organisms/Header.tsx";
 import {
-  StateFlow,
   StateFlowContextService,
 } from "../../src/state-flow/StateFlowContext.tsx";
 import { assertEquals } from "$std/testing/asserts.ts";
-import { DeepSignal, deepSignal } from "$deepsignal";
+import { Action } from "../../src/atoms/Action.tsx";
 
-interface CountState extends StateFlow {
-  count: number;
+class CounterState {
+  public Count = 0;
 
-  get double(): number;
+  public get Double(): number {
+    return this.Count * 2;
+  }
 }
 
-interface TestState extends StateFlow {
-  FirstName: string;
+class TestState {
+  public Counter: CounterState = new CounterState();
 
-  get FullName(): string;
+  public FirstName!: string;
 
-  LastName: string;
+  public get FullName(): string {
+    return `${this.FirstName} ${this.LastName}`;
+  }
+
+  public LastName!: string;
 }
 
 class TestStateFlowContextService extends StateFlowContextService<TestState> {
-  constructor(initState: TestState) {
-    super(initState);
+  constructor() {
+    super(new TestState());
   }
 
   public ChangeName(first: string, last: string): void {
-    this.$Draft((draft) => {
-      draft.FirstName = first;
+    this.State.FirstName = first;
 
-      draft.LastName = last;
-    });
+    this.State.LastName = last;
+  }
+
+  public Increment(): void {
+    this.State.Counter.Count = this.State.Counter.Count + 1;
   }
 }
 
 describe("StateFlowContext Tests", () => {
   describe("Change Name Test", () => {
-    // const state = deepSignal({
-    //   count: 0,
-    //   get double(): number {
-    //     return state.count * 2;
+    const testCtxt = new TestStateFlowContextService(); //{
+    //   FirstName: "",
+    //   LastName: "",
+    //   get FullName(): string {
+    //     return `${testCtxt.State.FirstName} ${testCtxt.State.LastName}`;
     //   },
-    // } as CountState);
+    // });
 
-    // assertEquals(state.count, 0);
-    // assertEquals(state.double, 0);
+    // assertEquals(testCtxt.State.FirstName, undefined);
+    // assertEquals(testCtxt.State.LastName, undefined);
+    assertEquals(testCtxt.State.Counter.Count, undefined);
 
-    // state.count += 1;
+    // testCtxt.ChangeName("Michael", "Gearhardt");
 
-    // assertEquals(state.count, 1);
-    // assertEquals(state.double, 2);
+    testCtxt.Increment();
 
-    const testCtxt = new TestStateFlowContextService({
-      FirstName: "",
-      LastName: "",
-      get FullName(): string {
-        return `${testCtxt.State.FirstName} ${testCtxt.State.LastName}`;
-      },
-    });
+    // assertEquals(testCtxt.State.FirstName, "Michael");
+    // assertEquals(testCtxt.State.LastName, "Gearhardt");
+    // assertEquals(testCtxt.State.FullName, "Michael Gearhardt");
+    // assertEquals(testCtxt.State.Counter.Count, 1);
 
-    assertEquals(testCtxt.State.FirstName, "");
-    assertEquals(testCtxt.State.LastName, "");
+    // const html = render(
+    //   <div>
+    //     {testCtxt.State.FirstName} <br />
+    //     {testCtxt.State.LastName} <br />
+    //     {testCtxt.State.FullName} <br />
+    //     {testCtxt.State.Counter.Count} <br />
 
-    testCtxt.ChangeName("Michael", "Gearhardt");
+    //     {
+    //       /* <Action>
+    //       <>Michael Gearhardt</>
+    //     </Action> */
+    //     }
 
-    assertEquals(testCtxt.State.FirstName, "Michael");
-    assertEquals(testCtxt.State.LastName, "Gearhardt");
-    assertEquals(testCtxt.State.FullName, "Michael Gearhardt");
+    //     {
+    //       /* <Action>
+    //       Pete Sanchez
+    //     </Action> */
+    //     }
+    //   </div>,
+    // );
+
+    // assertEquals(
+    //   html,
+    //   "<div>Michael <br/>Gearhardt <br/>Michael Gearhardt <br/></div>",
+    // );
   });
 });
