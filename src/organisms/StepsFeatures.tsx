@@ -68,6 +68,8 @@ export interface StepFeature {
 export interface StepsFeaturesProps extends FeaturesProps {
   children?: Array<StepFeature>;
 
+  hideDescription?: boolean;
+
   step?: number;
 }
 
@@ -92,13 +94,15 @@ export function StepsFeatures(props: StepsFeaturesProps) {
             childStep.class,
           ),
           displayStyle: DisplayStyleTypes.Center,
-          children: props.step === i && (
+          children: (
             <>
-              <p class="m-2">
-                {childStep.description}
-              </p>
+              {props.step === i && props.hideDescription && (
+                <p class="m-2">
+                  {childStep.description}
+                </p>
+              )}
 
-              {childStep.children}
+              {props.step === i && childStep.children}
             </>
           ),
         };
