@@ -92,13 +92,13 @@ export function StepsFeatures(props: StepsFeaturesProps) {
             childStep.class,
           ),
           displayStyle: DisplayStyleTypes.Center,
-          children: (
+          children: props.step === i && (
             <>
               <p class="m-2">
                 {childStep.description}
               </p>
 
-              {props.step === i && childStep.children}
+              {childStep.children}
             </>
           ),
         };
