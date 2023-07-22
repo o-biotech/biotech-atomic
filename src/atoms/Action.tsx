@@ -52,14 +52,14 @@ export function Action(
         (actionStyle & ActionStyleTypes.Solid) === ActionStyleTypes.Solid
           ? "bg-blue-500 text-white"
           : "text-black",
+        (actionStyle & ActionStyleTypes.Outline) ===
+            ActionStyleTypes.Outline
+          ? "text-blue-700 border-blue-700 border-solid border hover:border-blue-900"
+          : "border-none",
         (actionStyle & ActionStyleTypes.Link) ===
             ActionStyleTypes.Link
           ? "hover:(bg-blue-700 bg-opacity-80 text-white)"
           : "",
-        (actionStyle & ActionStyleTypes.Outline) ===
-            ActionStyleTypes.Outline
-          ? "border-blue-700 border-solid border hover:border-blue-900"
-          : "border-none",
       )}
     >
     </div>
