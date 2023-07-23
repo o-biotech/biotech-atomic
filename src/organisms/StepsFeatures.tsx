@@ -76,7 +76,7 @@ export interface StepsFeaturesProps extends FeaturesProps {
 export function StepsFeatures(props: StepsFeaturesProps) {
   return (
     <Features
-      class="m-2 md:m-8"
+      class="m-2 md:m-8 text-center"
       {...props}
     >
       {props.children?.map((childStep, i) => {
