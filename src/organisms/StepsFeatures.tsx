@@ -7,6 +7,7 @@ export function buildTitle(
   stepNumber: number,
   title: ComponentChildren,
   complete: boolean,
+  active: boolean,
 ): ComponentChildren {
   const textGradient = (
     <div
@@ -14,7 +15,9 @@ export function buildTitle(
         undefined,
         complete
           ? "bg-gradient-to-tr from-green-500 to-blue-500/75"
-          : "bg-gradient-to-tr from-blue-500 to-purple-500/75",
+          : active
+          ? "bg-gradient-to-tr from-blue-500 to-purple-500/75"
+          : "bg-gradient-to-tr from-blue-500 to-blue-700/75",
       )}
     >
     </div>
@@ -26,7 +29,9 @@ export function buildTitle(
         undefined,
         complete
           ? "bg-gradient-to-br from-green-500 to-blue-700/75 py-2"
-          : "bg-gradient-to-br from-blue-500 to-purple-500/75",
+          : active
+          ? "bg-gradient-to-br from-blue-500 to-purple-500/75"
+          : "bg-gradient-to-br from-blue-500 to-blue-700/75",
       )}
     >
     </div>
@@ -80,10 +85,12 @@ export function StepsFeatures(props: StepsFeaturesProps) {
       {...props}
     >
       {props.children?.map((childStep, i) => {
+        const active = props.step == i;
+
         const complete: boolean = props.step as number > i;
 
         const title = typeof childStep.title === "string"
-          ? buildTitle(i + 1, childStep.title, complete)
+          ? buildTitle(i + 1, childStep.title, complete, active)
           : childStep.title;
 
         return {
