@@ -1,4 +1,4 @@
-// deno-lint-ignore-file no-explicit-any ban-types
+// deno-lint-ignore-file
 import { computed, signal } from "@preact/signals";
 import { EventEmitter } from "node:events";
 import { isObject } from "../utils/object.utils.tsx";

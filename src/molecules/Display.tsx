@@ -23,11 +23,11 @@ export function useDisplayChildren(
   displayDetails: Array<DisplayProps> | undefined;
   displayElement: ComponentChildren;
 } {
-  const display = children instanceof Array<DisplayProps>
+  const display = Array.isArray(children) //&& children.every(item => item instanceof DisplayProps)
     ? undefined
     : children as ComponentChildren;
 
-  const displayDetails = children instanceof Array<DisplayProps>
+  const displayDetails = Array.isArray(children) //&& children.every(item => item instanceof DisplayProps)
     ? children as Array<DisplayProps>
     : undefined;
 
