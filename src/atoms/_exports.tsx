@@ -1,15 +1,15 @@
 import {
   Action,
-  type ActionAnchorProps,
-  type ActionButtonProps,
-  type ActionProps,
+  ActionAnchorProps,
+  ActionButtonProps,
+  ActionProps,
   ActionStyleTypes,
 } from "../src.deps.ts";
 
-export {
+export default {
   Action,
-  type ActionAnchorProps,
-  type ActionButtonProps,
-  type ActionProps,
+  ActionAnchorProps,
+  ActionButtonProps,
+  ActionProps,
   ActionStyleTypes,
 };
