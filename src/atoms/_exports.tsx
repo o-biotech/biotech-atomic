@@ -1,2 +1,7 @@
-export * from "./Action.tsx";
-export * from "./icons/_exports.tsx";
+export {
+  Action,
+  type ActionAnchorProps,
+  type ActionButtonProps,
+  type ActionProps,
+  ActionStyleTypes,
+} from "../src.deps.ts";
