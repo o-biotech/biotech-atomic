@@ -9,7 +9,7 @@ export {
   Hero,
   type HeroProps,
   HeroStyleTypes,
-  StepFeature,
+  type StepFeature,
   StepsFeatures,
   type StepsFeaturesProps,
 } from "../src.deps.ts";

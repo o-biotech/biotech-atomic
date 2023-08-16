@@ -8,4 +8,5 @@ export {
   type MenuButtonProps,
   MenuButtonStyleTypes,
   ResponsiveSet,
+  type ResponsiveSetProps,
 } from "../src.deps.ts";
