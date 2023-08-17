@@ -1,1 +1,6 @@
-export { SlideToggle, type SlideToggleProps } from "../../src.deps.ts";
+export {
+  Input,
+  type InputProps,
+  SlideToggle,
+  type SlideToggleProps,
+} from "../../src.deps.ts";
