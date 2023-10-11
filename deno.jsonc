@@ -13,23 +13,20 @@
     "jsxImportSource": "preact"
   },
   "imports": {
-    "preact": "https://esm.sh/preact@10.16.0",
-    "preact/": "https://esm.sh/preact@10.16.0/",
-    "preact-render-to-string": "https://esm.sh/preact-render-to-string@6.2.0"
+    "$dnt": "https://deno.land/x/dnt/mod.ts",
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2"
   },
   "lock": false,
   "fmt": {
-    "files": {
-      "include": [],
-      "exclude": []
-    },
+    "include": ["./**/*.ts", "./**/*.tsx"],
+    "exclude": [],
     "options": {}
   },
   "lint": {
-    "files": {
-      "include": [],
-      "exclude": []
-    },
+    "include": ["./**/*.ts", "./**/*.tsx"],
+    "exclude": [],
     "rules": {
       "include": [],
       "exclude": []
