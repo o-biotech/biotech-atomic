@@ -10,3 +10,5 @@ export {
   ResponsiveSet,
   type ResponsiveSetProps,
 } from "../src.deps.ts";
+
+export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
