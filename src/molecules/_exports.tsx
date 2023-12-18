@@ -11,4 +11,6 @@ export {
   type ResponsiveSetProps,
 } from "../src.deps.ts";
 
+export { EaCCreateForm, type EaCCreateFormProps } from "../src.deps.ts";
+
 export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
