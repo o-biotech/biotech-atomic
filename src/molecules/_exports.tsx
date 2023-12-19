@@ -12,6 +12,8 @@ export {
 } from "../src.deps.ts";
 
 export {
+  CloudCALZForm,
+  type CloudCALZFormProps,
   CloudConnectForm,
   type CloudConnectFormProps,
   EaCCreateForm,
