@@ -16,6 +16,8 @@ export {
   type CloudCALZFormProps,
   CloudConnectAzureForm,
   type CloudConnectAzureFormProps,
+  CloudConnectExistingForm,
+  type CloudConnectExistingFormProps,
   CloudConnectForm,
   type CloudConnectFormProps,
   EaCCreateForm,
