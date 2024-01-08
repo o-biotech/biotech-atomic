@@ -4,3 +4,4 @@ export * from "./src/organisms/_exports.tsx";
 export * from "./src/templates/_exports.tsx";
 export * from "./src/utils/_exports.tsx";
 export * from "./src/state-flow/StateFlowContext.tsx";
+export * from "./src/tailwind/safelist.ts";
