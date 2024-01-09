@@ -5,4 +5,4 @@ coverage/
 lcov/
 target/
 tailwind.config.js
-tailwind.components.ts
+#tailwind.components.ts
