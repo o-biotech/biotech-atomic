@@ -1,8 +1,9 @@
 {
   "tasks": {
-    "build": "deno task build:fmt && deno task build:lint && deno task test",
+    "build": "deno task build:fmt && deno task build:lint && deno task build:tailwind && deno task test",
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
+    "build:tailwind": "deno run -A safelist.ts",
     "deploy": "deno fmt && deno task build && ftm git",
     "dev-config": "deno task dev-tailwind",
     "dev-tailwind": "echo '// deno-lint-ignore no-empty\n{}' > tailwind.config.js",

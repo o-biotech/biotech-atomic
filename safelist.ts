@@ -26,4 +26,13 @@ const files = await getFilesList('./src', '.tsx');
 console.log(files);
 
 // export const safelist = new Set([...AtomicIoTSafelist]);
-export const safelist = new Set(files.map((file) => import.meta.resolve(file)));
+const tailwindComponentsConfig = `export default {
+\tRoot: import.meta.resolve("./"),
+\tComponents: [\n\t\t"${files.join('",\n\t\t"')}"\n\t],
+};`;
+
+console.log(tailwindComponentsConfig);
+
+await Deno.writeTextFile('./tailwind.components.ts', tailwindComponentsConfig, {
+  create: true,
+});
