@@ -4,7 +4,7 @@
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "build:tailwind": "deno run -A tailwind-components.config.ts",
-    "deploy": "deno fmt && deno task build && ftm git",
+    "deploy": "deno task build && ftm git",
     "dev-config": "deno task dev-tailwind",
     "dev-tailwind": "echo '// deno-lint-ignore no-empty\n{}' > tailwind.config.js",
     "test": "deno test -A ./tests/tests.ts --coverage=cov"
