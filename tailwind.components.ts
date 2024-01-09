@@ -1,6 +1,6 @@
 export default {
-	Root: import.meta.resolve("./"),
-	Components: [
+  	Root: import.meta.resolve("./"),
+  	Components: [
 		"./src/atoms/forms/_exports.tsx",
 		"./src/atoms/_exports.tsx",
 		"./src/molecules/_exports.tsx",
@@ -9,4 +9,4 @@ export default {
 		"./src/templates/_exports.tsx",
 		"./src/utils/_exports.tsx"
 	],
-};
+  };
