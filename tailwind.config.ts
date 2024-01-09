@@ -5,9 +5,14 @@ async function getFilesList(
   ext?: string
 ): Promise<string[]> {
   const foundFiles: string[] = [];
-  for await (const fileOrFolder of Deno.readDir(
-    import.meta.resolve(directory).replace('file:///', '')
-  )) {
+
+  let dirPath = import.meta.resolve(directory).replace('file:///', '');
+
+  if (dirPath.startsWith('home')) {
+    dirPath = `/${dirPath}`;
+  }
+
+  for await (const fileOrFolder of Deno.readDir(dirPath)) {
     if (fileOrFolder.isDirectory) {
       // If it's not ignored, recurse and search this folder for files.
       const nestedFiles = await getFilesList(
@@ -19,6 +24,7 @@ async function getFilesList(
       foundFiles.push(`${directory}/${fileOrFolder.name}`);
     }
   }
+
   return foundFiles.filter((ff) => (ext ? ff.endsWith(ext) : ff));
 }
 
