@@ -2,13 +2,13 @@
 
 async function getFilesList(
   directory: string,
-  ext?: string
+  ext?: string,
 ): Promise<string[]> {
   const foundFiles: string[] = [];
 
-  let dirPath = import.meta.resolve(directory).replace('file:///', '');
+  let dirPath = import.meta.resolve(directory).replace("file:///", "");
 
-  if (dirPath.startsWith('home')) {
+  if (dirPath.startsWith("home")) {
     dirPath = `/${dirPath}`;
   }
 
@@ -16,7 +16,7 @@ async function getFilesList(
     if (fileOrFolder.isDirectory) {
       // If it's not ignored, recurse and search this folder for files.
       const nestedFiles = await getFilesList(
-        `${directory}/${fileOrFolder.name}`
+        `${directory}/${fileOrFolder.name}`,
       );
       foundFiles.push(...nestedFiles);
     } else {
@@ -28,7 +28,7 @@ async function getFilesList(
   return foundFiles.filter((ff) => (ext ? ff.endsWith(ext) : ff));
 }
 
-const files = await getFilesList('./src', '.tsx');
+const files = await getFilesList("./src", ".tsx");
 console.log(files);
 
 // export const safelist = new Set([...AtomicIoTSafelist]);
@@ -39,6 +39,6 @@ const tailwindComponentsConfig = `export default {
 
 console.log(tailwindComponentsConfig);
 
-await Deno.writeTextFile('./tailwind.components.ts', tailwindComponentsConfig, {
+await Deno.writeTextFile("./tailwind.components.ts", tailwindComponentsConfig, {
   create: true,
 });

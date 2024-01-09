@@ -6,7 +6,7 @@ async function getFilesList(directory: string): Promise<string[]> {
     if (fileOrFolder.isDirectory) {
       // If it's not ignored, recurse and search this folder for files.
       const nestedFiles = await getFilesList(
-        `${directory}/${fileOrFolder.name}`
+        `${directory}/${fileOrFolder.name}`,
       );
       foundFiles.push(...nestedFiles);
     } else {
@@ -17,7 +17,7 @@ async function getFilesList(directory: string): Promise<string[]> {
   return foundFiles;
 }
 
-const files = await getFilesList('./src');
+const files = await getFilesList("./src");
 console.log(files);
 
 // export const safelist = new Set([...AtomicIoTSafelist]);
