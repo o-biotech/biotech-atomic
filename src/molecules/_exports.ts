@@ -20,8 +20,8 @@ export {
   type CloudConnectExistingFormProps,
   CloudConnectForm,
   type CloudConnectFormProps,
-  EaCCreateForm,
-  type EaCCreateFormProps,
+  EaCManageForm,
+  type EaCManageFormProps,
 } from "../src.deps.ts";
 
 export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
