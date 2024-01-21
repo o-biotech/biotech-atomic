@@ -22,6 +22,8 @@ export {
   type CloudConnectFormProps,
   EaCManageForm,
   type EaCManageFormProps,
+  EaCManageHandlerForm,
+  type EaCManageHandlerFormProps,
 } from "../src.deps.ts";
 
 export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
