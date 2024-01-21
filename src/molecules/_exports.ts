@@ -20,6 +20,8 @@ export {
   type CloudConnectExistingFormProps,
   CloudConnectForm,
   type CloudConnectFormProps,
+  EaCManageDevOpsActionForm,
+  type EaCManageDevOpsActionFormProps,
   EaCManageForm,
   type EaCManageFormProps,
   EaCManageHandlerForm,
