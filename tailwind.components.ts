@@ -6,13 +6,14 @@ export default [
 		],
 	},
 	{
-		Root: 'https://deno.land/x/fathym_atomic_design_kit@v0.0.51/',
+		Root: 'https://deno.land/x/fathym_atomic_design_kit@v0.0.52/',
 		Components: [
 			"./src/atoms/Logo.tsx",
 			"./src/molecules/azure/connect.form.tsx",
 			"./src/molecules/azure/existing.form.tsx",
 			"./src/molecules/eac/calz.form.tsx",
 			"./src/molecules/eac/connect.form.tsx",
+			"./src/molecules/eac/manage-devops-action.form.tsx",
 			"./src/molecules/eac/manage-handler.form.tsx",
 			"./src/molecules/eac/manage.form.tsx",
 			"./src/organisms/FathymHeader.tsx",
