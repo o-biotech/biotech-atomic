@@ -3,7 +3,7 @@
 
 export * from "https://deno.land/x/fathym_common@v0.0.131/mod.ts";
 
-export * from "https://deno.land/x/fathym_atomic_design_kit@v0.0.49/mod.ts";
+export * from "https://deno.land/x/fathym_atomic_design_kit@v0.0.50/mod.ts";
 
-import FADKTC from "https://deno.land/x/fathym_atomic_design_kit@v0.0.49/tailwind.components.ts";
+import FADKTC from "https://deno.land/x/fathym_atomic_design_kit@v0.0.50/tailwind.components.ts";
 export const FathymAtomicDesignKitTailwindComponents = FADKTC;
