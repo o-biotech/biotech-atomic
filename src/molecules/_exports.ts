@@ -26,6 +26,8 @@ export {
   type EaCManageFormProps,
   EaCManageHandlerForm,
   type EaCManageHandlerFormProps,
+  EaCManageSecretForm,
+  type EaCManageSecretFormProps,
 } from "../src.deps.ts";
 
 export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
