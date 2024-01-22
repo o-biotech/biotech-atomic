@@ -26,10 +26,10 @@ export {
   type EaCManageFormProps,
   EaCManageHandlerForm,
   type EaCManageHandlerFormProps,
-  type EaCManageIoTDeviceFormProps,
+  EaCManageIoTDeviceForm,
   type EaCManageIoTDeviceFormProps,
   EaCManageIoTForm,
-  EaCManageIoTForm,
+  type EaCManageIoTFormProps,
   EaCManageSecretForm,
   type EaCManageSecretFormProps,
 } from "../src.deps.ts";
