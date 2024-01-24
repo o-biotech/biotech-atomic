@@ -1,5 +1,6 @@
 export {
   classSet,
+  type DataLookup,
   factory,
   isObject,
   mergeDeep,
