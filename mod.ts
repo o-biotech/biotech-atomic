@@ -1,6 +1,13 @@
-export * from "./src/atoms/_exports.ts";
-export * from "./src/molecules/_exports.ts";
-export * from "./src/organisms/_exports.ts";
-export * from "./src/templates/_exports.ts";
-export * from "./src/utils/_exports.ts";
-export * from "./src/state-flow/StateFlowContext.tsx";
+export * from "./src/_exports.ts";
+
+import { islandsConfig as fathymAtomicIslandsConfig } from "./src/src.deps.ts";
+
+export function islandsConfig() {
+  return [
+    ...fathymAtomicIslandsConfig(),
+    {
+      baseLocation: import.meta.url,
+      paths: [],
+    },
+  ];
+}
