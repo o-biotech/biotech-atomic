@@ -6,7 +6,7 @@ export default [
 		],
 	},
 	{
-		Root: 'https://deno.land/x/fathym_atomic_design_kit@v0.0.83/',
+		Root: 'https://deno.land/x/fathym_atomic_design_kit@v0.0.84-integration/',
 		Components: [
 			"./src/atoms/Logo.tsx",
 			"./src/molecules/azure/connect.form.tsx",
@@ -25,10 +25,11 @@ export default [
 		],
 	},
 	{
-		Root: 'https://deno.land/x/fathym_atomic@v0.0.129/',
+		Root: 'https://deno.land/x/fathym_atomic@v0.0.130/',
 		Components: [
 			"./src/atoms/Action.tsx",
 			"./src/atoms/forms/Input.tsx",
+			"./src/atoms/forms/InputWrapper.tsx",
 			"./src/atoms/forms/Select.tsx",
 			"./src/atoms/forms/SlideToggle.tsx",
 			"./src/molecules/ActionGroup.tsx",
