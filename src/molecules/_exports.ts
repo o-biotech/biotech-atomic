@@ -18,6 +18,10 @@ export {
   type CloudConnectAzureFormProps,
   CloudConnectExistingForm,
   type CloudConnectExistingFormProps,
+  CloudConnectNewSubForm,
+} from "../src.deps.ts";
+
+export {
   EaCManageCloudForm,
   type EaCManageCloudFormProps,
   EaCManageDevOpsActionForm,

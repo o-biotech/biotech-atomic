@@ -13,3 +13,10 @@ export {
   StepsFeatures,
   type StepsFeaturesProps,
 } from "../src.deps.ts";
+
+export {
+  CloudConnectSub,
+  type CloudConnectSubProps,
+  ConnectAzure,
+  type ConnectAzureProps,
+} from "../src.deps.ts";
