@@ -7,7 +7,8 @@ import {
 } from "../../src.deps.ts";
 
 export type WarmStorageQueryFormProps = {
-  query: Record<string, string>;
+  query: string;
+  lookup: string;
 } & JSX.HTMLAttributes<HTMLFormElement>;
 
 export default function WarmStorageQueryForm(
@@ -36,7 +37,7 @@ export default function WarmStorageQueryForm(
               id="query"
               name="query"
               type="text"
-              value={props.query[1] || ""}
+              value={props.query || ""}
               multiline
               required
               placeholder="Enter warm storage query"
