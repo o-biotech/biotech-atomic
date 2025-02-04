@@ -71,7 +71,7 @@ export default function WarmStorageQueryForm(
             <div>
               <label
                 for="query"
-                class="block uppercase tracking-wide font-bold mb-2 text-lg text-left"
+                //class="block uppercase tracking-wide font-bold mb-2 text-lg text-left"
               >
                 Query
               </label>
@@ -89,22 +89,7 @@ export default function WarmStorageQueryForm(
           </div>
         </div>
 
-        <ActionGroup class="mt-8 flex-col">
-          <Action
-            type="submit"
-            //class="w-full md:w-auto text-white font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
-          >
-            Run
-          </Action>
-          {/* Button to open the modal */}
-          <button
-            type="button"
-            //onClick={toggleModal}
-            //class="w-full md:w-auto text-blue-500 font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
-          >
-            Open Modal
-          </button>
-        </ActionGroup>
+  
       </form>
 
      
