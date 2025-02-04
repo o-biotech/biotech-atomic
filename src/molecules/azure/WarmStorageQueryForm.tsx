@@ -37,11 +37,14 @@ export default function WarmStorageQueryForm(
 
   // Function to handle Save button click
   const handleSave = async () => {
+    // Check if props.query is a Symbol, and handle accordingly
+    const queryValue = typeof props.query === "symbol" ? String(props.query) : props.query || "";
+
     // Create the data object for the POST request
     const data: Record<string, string> = {
       queryName,
       queryLookup,
-      query: String(props.query) || "",  // Ensure props.query is always a string
+      query: queryValue,  // Ensure props.query is safely handled as a string
     };
 
     // Send the POST request
@@ -78,7 +81,7 @@ export default function WarmStorageQueryForm(
                 id="query"
                 name="query"
                 type="text"
-                value={String(props.query) || ""}  // Ensure it's always a string
+                value={typeof props.query === "symbol" ? String(props.query) : props.query || ""}  // Check for Symbol and handle accordingly
                 multiline
                 required
                 placeholder="Enter warm storage query"
