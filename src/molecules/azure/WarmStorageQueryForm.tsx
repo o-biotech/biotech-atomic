@@ -33,7 +33,10 @@ export default function WarmStorageQueryForm(
   const [queryLookup, setQueryLookup] = useState("");
 
   // Function to toggle modal visibility
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleModal = () => {
+    console.log("Toggle Modal Called!");  // Add this to check if it's being triggered
+    setIsModalOpen(!isModalOpen);
+  };
 
   // Function to handle Save button click
   const handleSave = async () => {
