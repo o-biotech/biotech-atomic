@@ -99,10 +99,8 @@ export default function WarmStorageQueryForm(
           {/* Button to open the modal */}
           <button
             type="button"
-            //onClick={toggleModal}
-            //class="w-full md:w-auto text-blue-500 font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
           >
-            Open Modal
+             Open Modal
           </button>
         </ActionGroup>
       </form>
