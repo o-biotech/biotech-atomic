@@ -92,7 +92,7 @@ export default function WarmStorageQueryForm(
         <ActionGroup class="mt-8 flex-col">
           <Action
             type="submit"
-            class="w-full md:w-auto text-white font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
+            //class="w-full md:w-auto text-white font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
           >
             Run
           </Action>
@@ -100,7 +100,7 @@ export default function WarmStorageQueryForm(
           <button
             type="button"
             //onClick={toggleModal}
-            class="w-full md:w-auto text-blue-500 font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
+            //class="w-full md:w-auto text-blue-500 font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
           >
             Open Modal
           </button>
