@@ -19,13 +19,13 @@ import {
 //   return response.json(); // Or handle the response accordingly
 // };
 
-export type WarmStorageQueryFormProps = {
+//export type WarmStorageQueryFormProps = {
   //query?: string;
   //lookup?: string;
-} & JSX.HTMLAttributes<HTMLFormElement>;
+//} & JSX.HTMLAttributes<HTMLFormElement>;
 
 export default function WarmStorageQueryForm(
-  props: WarmStorageQueryFormProps,
+ // props: WarmStorageQueryFormProps,
 ): JSX.Element {
   // State for modal visibility and form data
   const [isModalOpen, setIsModalOpen] = useState(false);
