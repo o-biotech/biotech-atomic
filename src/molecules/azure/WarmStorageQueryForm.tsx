@@ -20,8 +20,8 @@ const postQueryData = async (data: Record<string, string>) => {
 };
 
 export type WarmStorageQueryFormProps = {
-  query: string;
-  lookup: string;
+  query?: string;
+  lookup?: string;
 } & JSX.HTMLAttributes<HTMLFormElement>;
 
 export default function WarmStorageQueryForm(
