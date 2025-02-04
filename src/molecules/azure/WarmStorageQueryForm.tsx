@@ -67,8 +67,8 @@ export default function WarmStorageQueryForm(
         //)}
       >
         <div>
-          <div class="w-full px-3">
-            <div class="w-full p-3">
+          <div>
+            <div>
               <label
                 for="query"
                 class="block uppercase tracking-wide font-bold mb-2 text-lg text-left"
