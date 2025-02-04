@@ -28,15 +28,15 @@ export default function WarmStorageQueryForm(
  // props: WarmStorageQueryFormProps,
 ): JSX.Element {
   // State for modal visibility and form data
-  const [isModalOpen, setIsModalOpen] = useState(false);
+ // const [isModalOpen, setIsModalOpen] = useState(false);
   //const [queryName, setQueryName] = useState("");
   //const [queryLookup, setQueryLookup] = useState("");
 
   // Function to toggle modal visibility
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+ // const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   // Function to handle Save button click
-  const handleSave = () => {
+ // const handleSave = () => {
     // Check if props.query is a Symbol, and handle accordingly
     //const queryValue = typeof props.query === "symbol" ? String(props.query) : props.query || "";
 
@@ -55,7 +55,7 @@ export default function WarmStorageQueryForm(
     
     // Close the modal after saving
     setIsModalOpen(false);
-  };
+ // };
 
   return (
     <>
@@ -100,7 +100,7 @@ export default function WarmStorageQueryForm(
           {/* Button to open the modal */}
           <button
             type="button"
-            onClick={toggleModal}
+            //onClick={toggleModal}
             class="w-full md:w-auto text-blue-500 font-bold m-1 py-2 px-4 rounded focus:outline-none shadow-lg"
           >
             Open Modal
