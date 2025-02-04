@@ -54,7 +54,7 @@ export default function WarmStorageQueryForm(
     // console.log(response);
     
     // Close the modal after saving
-    setIsModalOpen(false);
+    //setIsModalOpen(false);
  // };
 
   return (
