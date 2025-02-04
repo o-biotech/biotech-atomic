@@ -41,7 +41,7 @@ export default function WarmStorageQueryForm(
     const data: Record<string, string> = {
       queryName,
       queryLookup,
-      query: props.query[1] || "", // Assuming `query` is stored in props.query[1]
+      query: props.query || "",
     };
 
     // Send the POST request
