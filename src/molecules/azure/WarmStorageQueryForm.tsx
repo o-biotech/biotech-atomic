@@ -107,8 +107,6 @@ export default function WarmStorageQueryForm(
         </ActionGroup>
       </form>
 
-      {/* Modal */}
-      
-    </>
+     
   );
 }
