@@ -58,7 +58,6 @@ export default function WarmStorageQueryForm(
  // };
 
   return (
-    <>
       <form
         method="post"
         //{...props}
