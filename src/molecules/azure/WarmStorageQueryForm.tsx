@@ -41,7 +41,7 @@ export default function WarmStorageQueryForm(
     const data: Record<string, string> = {
       queryName,
       queryLookup,
-      query: props.query || "",
+      query: String(props.query) || "",  // Ensure props.query is always a string
     };
 
     // Send the POST request
@@ -78,7 +78,7 @@ export default function WarmStorageQueryForm(
                 id="query"
                 name="query"
                 type="text"
-                value={props.query || ""}
+                value={String(props.query) || ""}  // Ensure it's always a string
                 multiline
                 required
                 placeholder="Enter warm storage query"
