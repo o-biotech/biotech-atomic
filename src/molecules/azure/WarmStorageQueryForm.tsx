@@ -36,7 +36,7 @@ export default function WarmStorageQueryForm(
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   // Function to handle Save button click
-  const handleSave = async () => {
+  const handleSave = () => {
     // Check if props.query is a Symbol, and handle accordingly
     //const queryValue = typeof props.query === "symbol" ? String(props.query) : props.query || "";
 
