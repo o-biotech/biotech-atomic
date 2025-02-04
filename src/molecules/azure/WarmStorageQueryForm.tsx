@@ -96,10 +96,7 @@ export default function WarmStorageQueryForm(
           >
             Run
           </Action>
-          {/* Button to open the modal */}
-          <button
-            type="button"
-          >
+          <button type="button">
              Open Modal
           </button>
         </ActionGroup>
