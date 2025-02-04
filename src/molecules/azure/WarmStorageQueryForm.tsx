@@ -29,8 +29,8 @@ export default function WarmStorageQueryForm(
 ): JSX.Element {
   // State for modal visibility and form data
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [queryName, setQueryName] = useState("");
-  const [queryLookup, setQueryLookup] = useState("");
+  //const [queryName, setQueryName] = useState("");
+  //const [queryLookup, setQueryLookup] = useState("");
 
   // Function to toggle modal visibility
   const toggleModal = () => setIsModalOpen(!isModalOpen);
