@@ -38,20 +38,20 @@ export default function WarmStorageQueryForm(
   // Function to handle Save button click
   const handleSave = async () => {
     // Check if props.query is a Symbol, and handle accordingly
-    const queryValue = typeof props.query === "symbol" ? String(props.query) : props.query || "";
+    //const queryValue = typeof props.query === "symbol" ? String(props.query) : props.query || "";
 
     // Create the data object for the POST request
-    const data: Record<string, string> = {
-      queryName,
-      queryLookup,
-      query: queryValue,  // Ensure props.query is safely handled as a string
-    };
+    // const data: Record<string, string> = {
+    //   queryName,
+    //   queryLookup,
+    //   query: queryValue,  // Ensure props.query is safely handled as a string
+    // };
 
-    // Send the POST request
-    const response = await postQueryData(data);
+    // // Send the POST request
+    // const response = await postQueryData(data);
     
-    // Handle the response as necessary (e.g., showing success or error)
-    console.log(response);
+    // // Handle the response as necessary (e.g., showing success or error)
+    // console.log(response);
     
     // Close the modal after saving
     setIsModalOpen(false);
@@ -81,7 +81,7 @@ export default function WarmStorageQueryForm(
                 id="query"
                 name="query"
                 type="text"
-                value={typeof props.query === "symbol" ? String(props.query) : props.query || ""}  // Check for Symbol and handle accordingly
+               // value={typeof props.query === "symbol" ? String(props.query) : props.query || ""}  // Check for Symbol and handle accordingly
                 multiline
                 required
                 placeholder="Enter warm storage query"
@@ -126,7 +126,7 @@ export default function WarmStorageQueryForm(
                 id="queryName"
                 name="queryName"
                 type="text"
-                value={queryName}
+                //value={queryName}
                 onInput={(e) => setQueryName(e.target.value)}
                 required
                 placeholder="Enter the query name"
@@ -145,7 +145,7 @@ export default function WarmStorageQueryForm(
                 id="queryLookup"
                 name="queryLookup"
                 type="text"
-                value={queryLookup}
+                //value={queryLookup}
                 onInput={(e) => setQueryLookup(e.target.value)}
                 required
                 placeholder="Enter the query lookup"
