@@ -3,9 +3,9 @@ import {
   ActionGroup,
   classSet,
   Input,
+  useState,
   type JSX,
 } from "../../src.deps.ts";
-import { useState } from "react";
 
 // Assuming you have some method for sending POST requests
 const postQueryData = async (data: Record<string, string>) => {
