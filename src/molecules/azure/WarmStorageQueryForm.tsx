@@ -8,16 +8,16 @@ import {
 } from "../../src.deps.ts";
 
 // Assuming you have some method for sending POST requests
-const postQueryData = async (data: Record<string, string>) => {
-  const response = await fetch("/your-endpoint", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  return response.json(); // Or handle the response accordingly
-};
+// const postQueryData = async (data: Record<string, string>) => {
+//   const response = await fetch("/your-endpoint", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//   });
+//   return response.json(); // Or handle the response accordingly
+// };
 
 export type WarmStorageQueryFormProps = {
   query?: string;
