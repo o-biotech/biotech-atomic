@@ -109,69 +109,7 @@ export default function WarmStorageQueryForm(
       </form>
 
       {/* Modal */}
-      {isModalOpen && (
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div class="bg-white p-6 rounded-lg w-1/3">
-            <h2 class="text-xl font-bold mb-4">Enter Query Details</h2>
-
-            {/* Query Name input */}
-            <div class="mb-4">
-              <label
-                for="queryName"
-                class="block text-lg font-semibold mb-2"
-              >
-                Query Name
-              </label>
-              <Input
-                id="queryName"
-                name="queryName"
-                type="text"
-                //value={queryName}
-                //onInput={(e) => setQueryName(e.target.value)}
-                required
-                placeholder="Enter the query name"
-              />
-            </div>
-
-            {/* Query Lookup input */}
-            <div class="mb-4">
-              <label
-                for="queryLookup"
-                class="block text-lg font-semibold mb-2"
-              >
-                Query Lookup
-              </label>
-              <Input
-                id="queryLookup"
-                name="queryLookup"
-                type="text"
-                //value={queryLookup}
-                //onInput={(e) => setQueryLookup(e.target.value)}
-                required
-                placeholder="Enter the query lookup"
-              />
-            </div>
-
-            {/* Modal Action Buttons */}
-            <div class="flex justify-between mt-4">
-              <button
-                type="button"
-                onClick={handleSave}
-                class="w-1/2 text-white bg-blue-500 font-bold py-2 px-4 rounded"
-              >
-                Save
-              </button>
-              <button
-                type="button"
-                onClick={toggleModal}
-                class="w-1/2 text-white bg-red-500 font-bold py-2 px-4 rounded"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      
     </>
   );
 }
