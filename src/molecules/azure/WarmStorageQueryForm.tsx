@@ -66,7 +66,7 @@ export default function WarmStorageQueryForm(
         //  props,
         //)}
       >
-        <div class="flex flex-wrap -mx-3 mb-4">
+        <div>
           <div class="w-full px-3">
             <div class="w-full p-3">
               <label
