@@ -127,7 +127,7 @@ export default function WarmStorageQueryForm(
                 name="queryName"
                 type="text"
                 //value={queryName}
-                onInput={(e) => setQueryName(e.target.value)}
+                //onInput={(e) => setQueryName(e.target.value)}
                 required
                 placeholder="Enter the query name"
               />
@@ -146,7 +146,7 @@ export default function WarmStorageQueryForm(
                 name="queryLookup"
                 type="text"
                 //value={queryLookup}
-                onInput={(e) => setQueryLookup(e.target.value)}
+                //onInput={(e) => setQueryLookup(e.target.value)}
                 required
                 placeholder="Enter the query lookup"
               />
