@@ -1,4 +1,4 @@
-export * from './azure/_exports.ts';
+export * from "./azure/_exports.ts";
 
 export {
   ActionGroup,
