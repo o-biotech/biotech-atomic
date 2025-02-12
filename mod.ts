@@ -2,7 +2,10 @@ export * from "./src/_exports.ts";
 
 import { islandsConfig as fathymAtomicIslandsConfig } from "./src/src.deps.ts";
 
-export function islandsConfig() {
+export function islandsConfig(): {
+  baseLocation: string;
+  paths: string[];
+}[] {
   return [
     ...fathymAtomicIslandsConfig(),
     {

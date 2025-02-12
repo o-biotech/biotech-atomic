@@ -47,6 +47,4 @@ export { CopyInput } from "../src.deps.ts";
 
 export { EnterpriseManagementItem } from "../src.deps.ts";
 
-export { IoTDisplay, type IoTDisplayProps } from "../src.deps.ts";
-
 export { type Tab, Tabs, type TabsProps } from "../src.deps.ts";
