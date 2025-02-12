@@ -10,8 +10,9 @@
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-    "deploy": "deno task build && ftm git",
-    "test": "deno test -A ./tests/tests.ts --coverage=cov"
+    "deploy": "npx rimraf cov && deno task build && ftm git",
+    "test": "deno test -A ./tests/tests.ts --coverage=cov",
+    "version": "deno run -A jsr:@fathym/common@0/build/version"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
