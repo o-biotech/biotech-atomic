@@ -2,7 +2,8 @@
   "name": "@o-biotech/atomic-design-kit",
   "version": "0.0.0",
   "exports": {
-    ".": "./mod.ts"
+    ".": "./mod.ts",
+    "./browser": "./src/browser/.exports.ts"
   },
   "license": "MIT",
   "tasks": {
