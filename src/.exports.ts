@@ -1,4 +1,4 @@
-export * from 'jsr:@fathym/atomic-design-kit@0.0.239'
+export * from 'jsr:@fathym/atomic-design-kit@0.0.240'
 export * from "./atoms/.exports.ts";
 export * from "./molecules/.exports.ts";
 export * from "./organisms/.exports.ts";
