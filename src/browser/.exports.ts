@@ -1,1 +1,1 @@
-export * from 'jsr:@fathym/atomic-design-kit@0.0.240/browser';
+export * from 'jsr:@fathym/atomic-design-kit@0.0.241/browser';
